@@ -1,0 +1,34 @@
+{
+  "description": "CECAM (Centre Européen de Calcul Atomique et Moléculaire) is an organization devoted to the promotion of fundamental research on advanced computational methods and to their application to important problems in frontier areas of science and technology.",
+  "favicon": "https://www.cecam.org/themes/cecam/assets/images/favicon.ico",
+  "fetched_url": "https://www.cecam.org/",
+  "final_url": "https://www.cecam.org/",
+  "headings": {
+    "h1": [
+      "The 2027 CECAM-Lorentz workshop has been selected!"
+    ],
+    "h2": [
+      "Centre Européen de Calcul Atomique et Moléculaire",
+      "News",
+      "The 2027 CECAM-Lorentz workshop has been selected!",
+      "Open Calls",
+      "CECAM Flagship call open!",
+      "Workshops",
+      "Schools",
+      "Conferences",
+      "Events",
+      "Centre Européen\n                        de Calcul Atomique\n                        et Moléculaire",
+      "Other activities",
+      "Mixed-Gen",
+      "Webinars",
+      "CECAM Lectures",
+      "CECAM-MARVEL Classics",
+      "Mary Ann Mansigh Conversation Series",
+      "Berni J. Alder CECAM prize"
+    ]
+  },
+  "og_image": null,
+  "og_site_name": null,
+  "og_title": null,
+  "title": "CECAM - Home- Centre Européen de Calcul Atomique et Moléculaire"
+}
