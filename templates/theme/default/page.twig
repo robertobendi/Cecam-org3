@@ -48,6 +48,14 @@
         </div>
     </section>
 
+    {% if hero %}
+    <figure class="page-hero__image">
+        <div class="container">
+            <img src="{{ hero }}" alt="Computational rendering of a protein structure — the kind of research CECAM Flagship workshops convene around.">
+        </div>
+    </figure>
+    {% endif %}
+
     <section class="section section--brass">
         <div class="container submit-band">
             <div>
