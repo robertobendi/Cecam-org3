@@ -3,13 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}{{ site.name }} — Centre Européen de Calcul Atomique et Moléculaire{% endblock %}</title>
-    {% if meta_description is defined %}
-        <meta name="description" content="{{ meta_description }}">
-    {% else %}
-        <meta name="description" content="CECAM runs the European program of flagship workshops, schools, and conferences in atomistic and molecular simulation.">
-    {% endif %}
-    <meta name="theme-color" content="#0A1628">
+    <title>Webinars · CECAM</title>
+            <meta name="description" content="A rolling program of online seminars from across the European simulation community.">
+        <meta name="theme-color" content="#0A1628">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -534,14 +530,13 @@
             .site-header, .site-footer, .nav-toggle { display: none; }
         }
     </style>
-    {% block head %}{% endblock %}
-</head>
+    </head>
 <body>
-    <a href="#main" class="skip-link">Skip to content</a>
+    <a href="webinars.html#main" class="skip-link">Skip to content</a>
 
     <header class="site-header" id="site-header">
         <div class="container site-header__inner">
-            <a class="brand" href="/" aria-label="CECAM — home">
+            <a class="brand" href="../index.html" aria-label="CECAM — home">
                 <span class="brand__dot" aria-hidden="true"></span>
                 CECAM
                 <span class="brand__suffix">Centre Européen de Calcul Atomique et Moléculaire</span>
@@ -551,17 +546,79 @@
                 Menu
             </button>
             <nav class="primary-nav" id="primary-nav" aria-label="Primary">
-                <a href="/program"{% if current_path == '/program' or (current_path starts with '/program/') %} class="is-active"{% endif %}>Program</a>
-                <a href="/flagship-call"{% if current_path == '/flagship-call' %} class="is-active"{% endif %}>Flagship Call</a>
-                <a href="/activities"{% if current_path == '/activities' or (current_path starts with '/activities/') %} class="is-active"{% endif %}>Activities</a>
-                <a href="/about"{% if current_path == '/about' %} class="is-active"{% endif %}>About</a>
-                <a href="/news"{% if current_path == '/news' or (current_path starts with '/news/') %} class="is-active"{% endif %}>News</a>
+                <a href="../program.html">Program</a>
+                <a href="../flagship-call.html">Flagship Call</a>
+                <a href="../activities.html">Activities</a>
+                <a href="../about.html">About</a>
+                <a href="../news.html">News</a>
             </nav>
         </div>
     </header>
 
     <main id="main">
-        {% block content %}{% endblock %}
+        
+<section class="section section--lg activity-hero">
+    <div class="container activity-hero__inner">
+        <div class="activity-hero__mono" aria-hidden="true">WB</div>
+        <p class="eyebrow">Activity series</p>
+        <h1 class="display">Webinars</h1>
+        <p class="activity-hero__lede">A rolling program of online seminars from across the European simulation community.</p>                    <p>
+                <a class="btn btn--primary" href="https://www.cecam.org/cecam-webinars" rel="noopener" target="_blank">Open the live series page →</a>
+            </p>
+            </div>
+</section>
+
+<section class="section section--lg">
+    <div class="container">
+        <article class="prose read-col" style="margin-inline:auto;">
+            <p>The <strong>CECAM Webinars</strong> programme is a rolling series of online seminars by researchers from across CECAM nodes and partner institutions. Most run for an hour — a 35 – 45 minute talk followed by discussion — and are open to anyone working in or adjacent to computational science.</p>
+<p>Upcoming webinars and the back-catalogue of recordings are announced through the CECAM mailing list and on cecam.org.</p>
+        </article>
+    </div>
+</section>
+
+<section class="section section--bone">
+    <div class="container submit-band">
+        <div>
+            <p class="eyebrow">More series</p>
+            <h2 class="submit-band__title">Explore the other CECAM activities.</h2>
+        </div>
+        <a class="btn" href="../activities.html" style="background:#1B3A6B;color:var(--bone);border-color:#1B3A6B;">All activity series →</a>
+    </div>
+</section>
+
+<style>
+    .activity-hero {
+        background: var(--navy);
+        border-bottom: 1px solid var(--paper-line);
+        padding-block: clamp(4rem, 7vw, 7rem);
+    }
+    .activity-hero__inner { max-width: 42rem; }
+    .activity-hero__mono {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 72px;
+        height: 72px;
+        border: 1px solid var(--brass);
+        color: var(--brass);
+        font-family: 'Fraunces', serif;
+        font-weight: 600;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        font-variation-settings: "opsz" 144;
+    }
+    .activity-hero h1 { margin: 1rem 0 1.5rem; max-width: 14ch; }
+    .activity-hero__lede {
+        font-family: 'Fraunces', serif;
+        font-style: italic;
+        font-size: clamp(1.125rem, .7vw + 1rem, 1.4375rem);
+        line-height: 1.45;
+        color: var(--paper);
+        margin-bottom: 2rem;
+    }
+</style>
+
     </main>
 
     <footer class="site-footer">
@@ -586,28 +643,28 @@
                 <div>
                     <h4>Activities</h4>
                     <ul>
-                        <li><a href="/activities/mixed-gen">Mixed-Gen</a></li>
-                        <li><a href="/activities/cecam-lectures">CECAM Lectures</a></li>
-                        <li><a href="/activities/marvel-classics">MARVEL Classics</a></li>
-                        <li><a href="/activities/mansigh-series">Mansigh Series</a></li>
-                        <li><a href="/activities/alder-prize">Alder Prize</a></li>
-                        <li><a href="/activities/webinars">Webinars</a></li>
+                        <li><a href="mixed-gen.html">Mixed-Gen</a></li>
+                        <li><a href="cecam-lectures.html">CECAM Lectures</a></li>
+                        <li><a href="marvel-classics.html">MARVEL Classics</a></li>
+                        <li><a href="mansigh-series.html">Mansigh Series</a></li>
+                        <li><a href="alder-prize.html">Alder Prize</a></li>
+                        <li><a href="webinars.html">Webinars</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4>The institute</h4>
                     <ul>
-                        <li><a href="/about">About CECAM</a></li>
-                        <li><a href="/careers">Careers</a></li>
-                        <li><a href="/documents">Documents</a></li>
-                        <li><a href="/disclaimer">Disclaimer</a></li>
-                        <li><a href="/privacy-policy">Privacy policy</a></li>
+                        <li><a href="../about.html">About CECAM</a></li>
+                        <li><a href="../careers.html">Careers</a></li>
+                        <li><a href="../documents.html">Documents</a></li>
+                        <li><a href="../disclaimer.html">Disclaimer</a></li>
+                        <li><a href="../privacy-policy.html">Privacy policy</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-baseline">
                 <p class="footer-baseline__name">Centre Européen de Calcul Atomique et Moléculaire</p>
-                <p class="footer-baseline__copy">© 1969–{{ "now"|date('Y') }} · CECAM, Lausanne</p>
+                <p class="footer-baseline__copy">© 1969–2026 · CECAM, Lausanne</p>
             </div>
         </div>
     </footer>

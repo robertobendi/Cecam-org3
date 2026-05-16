@@ -3,13 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}{{ site.name }} — Centre Européen de Calcul Atomique et Moléculaire{% endblock %}</title>
-    {% if meta_description is defined %}
-        <meta name="description" content="{{ meta_description }}">
-    {% else %}
-        <meta name="description" content="CECAM runs the European program of flagship workshops, schools, and conferences in atomistic and molecular simulation.">
-    {% endif %}
-    <meta name="theme-color" content="#0A1628">
+    <title>News · CECAM</title>
+            <meta name="description" content="CECAM news — workshop selections, program announcements, and updates from the European simulation community.">
+        <meta name="theme-color" content="#0A1628">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -534,14 +530,13 @@
             .site-header, .site-footer, .nav-toggle { display: none; }
         }
     </style>
-    {% block head %}{% endblock %}
-</head>
+    </head>
 <body>
-    <a href="#main" class="skip-link">Skip to content</a>
+    <a href="news.html#main" class="skip-link">Skip to content</a>
 
     <header class="site-header" id="site-header">
         <div class="container site-header__inner">
-            <a class="brand" href="/" aria-label="CECAM — home">
+            <a class="brand" href="index.html" aria-label="CECAM — home">
                 <span class="brand__dot" aria-hidden="true"></span>
                 CECAM
                 <span class="brand__suffix">Centre Européen de Calcul Atomique et Moléculaire</span>
@@ -551,17 +546,155 @@
                 Menu
             </button>
             <nav class="primary-nav" id="primary-nav" aria-label="Primary">
-                <a href="/program"{% if current_path == '/program' or (current_path starts with '/program/') %} class="is-active"{% endif %}>Program</a>
-                <a href="/flagship-call"{% if current_path == '/flagship-call' %} class="is-active"{% endif %}>Flagship Call</a>
-                <a href="/activities"{% if current_path == '/activities' or (current_path starts with '/activities/') %} class="is-active"{% endif %}>Activities</a>
-                <a href="/about"{% if current_path == '/about' %} class="is-active"{% endif %}>About</a>
-                <a href="/news"{% if current_path == '/news' or (current_path starts with '/news/') %} class="is-active"{% endif %}>News</a>
+                <a href="program.html">Program</a>
+                <a href="flagship-call.html">Flagship Call</a>
+                <a href="activities.html">Activities</a>
+                <a href="about.html">About</a>
+                <a href="news.html">News</a>
             </nav>
         </div>
     </header>
 
     <main id="main">
-        {% block content %}{% endblock %}
+        
+<section class="section section--lg news-title">
+    <div class="container">
+        <p class="eyebrow">Announcements</p>
+        <h1 class="display">News.</h1>
+        <p class="news-title__lede">
+            Workshop selections, program announcements, and updates from across the CECAM network.
+        </p>
+    </div>
+</section>
+
+<section class="section section--lg">
+    <div class="container">
+                    <ol class="news-list">
+                                    <li>
+                        <a class="news-row" href="news/alder-prize-2026-laureate.html">
+                            <time class="news-row__date" datetime="2026-05-15">
+                                <span class="news-row__day">15</span>
+                                <span class="news-row__month">May 2026</span>
+                            </time>
+                            <div class="news-row__body">
+                                <p class="eyebrow">News</p>
+                                <h2>The 2026 Berni J. Alder CECAM Prize has been awarded.</h2>
+                                                                    <p class="news-row__excerpt">For sustained contributions to enhanced-sampling methods and the development of community simulation infrastructure.</p>
+                                                                                                    <p class="small-meta">By CECAM Headquarters</p>
+                                                            </div>
+                                                    </a>
+                    </li>
+                                    <li>
+                        <a class="news-row" href="news/mansigh-conversation-series-spring-program.html">
+                            <time class="news-row__date" datetime="2026-04-02">
+                                <span class="news-row__day">02</span>
+                                <span class="news-row__month">Apr 2026</span>
+                            </time>
+                            <div class="news-row__body">
+                                <p class="eyebrow">News</p>
+                                <h2>Mansigh Conversation Series — spring 2026 program announced.</h2>
+                                                                    <p class="news-row__excerpt">Three online conversations on the culture of computational science, from open-source maintainership to the role of simulation in policy.</p>
+                                                                                                    <p class="small-meta">By Mansigh Series</p>
+                                                            </div>
+                                                    </a>
+                    </li>
+                                    <li>
+                        <a class="news-row" href="news/2027-cecam-lorentz-workshop-selected.html">
+                            <time class="news-row__date" datetime="2026-03-24">
+                                <span class="news-row__day">24</span>
+                                <span class="news-row__month">Mar 2026</span>
+                            </time>
+                            <div class="news-row__body">
+                                <p class="eyebrow">News</p>
+                                <h2>The 2027 CECAM-Lorentz workshop has been selected.</h2>
+                                                                    <p class="news-row__excerpt">Congratulations to Maximilian Ries, Sebastian Pfaller and Andrea Giuntoli: their proposal &quot;Fracture of Amorphous Materials Across the Scales&quot; is the 2027 CECAM-Lorentz workshop.</p>
+                                                                                                    <p class="small-meta">By CECAM Headquarters</p>
+                                                            </div>
+                                                            <figure class="news-row__thumb">
+                                    <img src="uploads/molecular-network.png" alt="" loading="lazy">
+                                </figure>
+                                                    </a>
+                    </li>
+                                    <li>
+                        <a class="news-row" href="news/flagship-call-2027-2028-open.html">
+                            <time class="news-row__date" datetime="2026-02-10">
+                                <span class="news-row__day">10</span>
+                                <span class="news-row__month">Feb 2026</span>
+                            </time>
+                            <div class="news-row__body">
+                                <p class="eyebrow">News</p>
+                                <h2>The 2027 – 2028 Flagship Call is open.</h2>
+                                                                    <p class="news-row__excerpt">Submissions are open until 17 July 2026 for the next two-year cycle of CECAM flagship workshops and schools.</p>
+                                                                                                    <p class="small-meta">By CECAM Headquarters</p>
+                                                            </div>
+                                                            <figure class="news-row__thumb">
+                                    <img src="uploads/protein-structure.png" alt="" loading="lazy">
+                                </figure>
+                                                    </a>
+                    </li>
+                            </ol>
+            </div>
+</section>
+
+<style>
+    .news-title { background: var(--navy); border-bottom: 1px solid var(--paper-line); padding-block: clamp(4rem, 7vw, 7rem); }
+    .news-title .display { max-width: 10ch; margin-top: 1rem; }
+    .news-title__lede {
+        max-width: 38em;
+        font-size: clamp(1rem, .6vw + .9rem, 1.1875rem);
+        line-height: 1.6;
+        color: var(--paper);
+        margin-top: 1.5rem;
+    }
+
+    .news-list { list-style: none; padding: 0; margin: 0; }
+    .news-list li { border-top: 1px solid var(--paper-line); }
+    .news-list li:last-child { border-bottom: 1px solid var(--paper-line); }
+
+    .news-row {
+        display: grid;
+        grid-template-columns: 90px 1fr;
+        gap: 1.5rem;
+        padding: 2rem 0;
+        align-items: start;
+        border: 0;
+        color: var(--paper);
+    }
+    @media (min-width: 720px) { .news-row { grid-template-columns: 110px 1fr 240px; gap: 2.5rem; } }
+    .news-row:hover { background: rgba(232,228,217,.03); border: 0; color: var(--bone); }
+    .news-row:hover h2 { color: var(--brass); }
+
+    .news-row__date { display: flex; flex-direction: column; align-items: flex-start; padding-top: 0.25rem; }
+    .news-row__day {
+        font-family: 'Fraunces', serif;
+        font-weight: 600;
+        font-size: 2.5rem;
+        color: var(--bone);
+        line-height: 0.9;
+    }
+    .news-row__month {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--brass);
+        margin-top: 0.5rem;
+    }
+
+    .news-row__body h2 { font-size: clamp(1.375rem, 1vw + 1rem, 1.875rem); margin: 0.4rem 0 0.75rem; max-width: 28ch; transition: color .15s ease; }
+    .news-row__excerpt { color: var(--paper-soft); margin: 0 0 0.75rem; max-width: 50ch; }
+
+    .news-row__thumb {
+        margin: 0;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        border: 1px solid var(--paper-line);
+    }
+    @media (max-width: 720px) { .news-row__thumb { display: none; } }
+    .news-row__thumb img { width: 100%; height: 100%; object-fit: cover; }
+</style>
+
     </main>
 
     <footer class="site-footer">
@@ -586,28 +719,28 @@
                 <div>
                     <h4>Activities</h4>
                     <ul>
-                        <li><a href="/activities/mixed-gen">Mixed-Gen</a></li>
-                        <li><a href="/activities/cecam-lectures">CECAM Lectures</a></li>
-                        <li><a href="/activities/marvel-classics">MARVEL Classics</a></li>
-                        <li><a href="/activities/mansigh-series">Mansigh Series</a></li>
-                        <li><a href="/activities/alder-prize">Alder Prize</a></li>
-                        <li><a href="/activities/webinars">Webinars</a></li>
+                        <li><a href="activities/mixed-gen.html">Mixed-Gen</a></li>
+                        <li><a href="activities/cecam-lectures.html">CECAM Lectures</a></li>
+                        <li><a href="activities/marvel-classics.html">MARVEL Classics</a></li>
+                        <li><a href="activities/mansigh-series.html">Mansigh Series</a></li>
+                        <li><a href="activities/alder-prize.html">Alder Prize</a></li>
+                        <li><a href="activities/webinars.html">Webinars</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4>The institute</h4>
                     <ul>
-                        <li><a href="/about">About CECAM</a></li>
-                        <li><a href="/careers">Careers</a></li>
-                        <li><a href="/documents">Documents</a></li>
-                        <li><a href="/disclaimer">Disclaimer</a></li>
-                        <li><a href="/privacy-policy">Privacy policy</a></li>
+                        <li><a href="about.html">About CECAM</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="documents.html">Documents</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                        <li><a href="privacy-policy.html">Privacy policy</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-baseline">
                 <p class="footer-baseline__name">Centre Européen de Calcul Atomique et Moléculaire</p>
-                <p class="footer-baseline__copy">© 1969–{{ "now"|date('Y') }} · CECAM, Lausanne</p>
+                <p class="footer-baseline__copy">© 1969–2026 · CECAM, Lausanne</p>
             </div>
         </div>
     </footer>

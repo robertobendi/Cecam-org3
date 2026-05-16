@@ -1,0 +1,1218 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Program 2026–2027 · CECAM</title>
+            <meta name="description" content="The full calendar of CECAM workshops, schools, conferences and events for 2026 and 2027 — from atomistic materials to biological simulation.">
+        <meta name="theme-color" content="#0A1628">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy:        #0A1628;
+            --navy-2:      #0F1E36;
+            --navy-3:      #16284A;
+            --lorentz:     #1B3A6B;
+            --lorentz-hi:  #2C5497;
+            --bone:        #F5F1E8;
+            --bone-2:      #EAE3D2;
+            --paper:       #E8E4D9;
+            --paper-soft:  rgba(232,228,217,.72);
+            --paper-mute:  rgba(232,228,217,.55);
+            --paper-line:  rgba(232,228,217,.18);
+            --paper-line-strong: rgba(232,228,217,.32);
+            --brass:       #C9A961;
+            --brass-hi:    #E3C078;
+            --brass-mute:  rgba(201,169,97,.18);
+            --danger:      #D8633A;
+            --max:         1240px;
+            --read:        720px;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        html, body { margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            background: var(--navy);
+            color: var(--paper);
+            font-size: 17px;
+            line-height: 1.55;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        body.nav-open { overflow: hidden; }
+        ::selection { background: var(--brass); color: var(--navy); }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Fraunces', 'Times New Roman', Georgia, serif;
+            font-weight: 500;
+            letter-spacing: -0.015em;
+            line-height: 1.15;
+            color: var(--bone);
+            margin: 0;
+            font-variation-settings: "opsz" 48;
+        }
+        h1 { font-size: clamp(2.25rem, 4.5vw + 1rem, 3rem); font-weight: 600; line-height: 1.08; }
+        h2 { font-size: clamp(1.75rem, 2vw + 1rem, 2.25rem); font-weight: 500; }
+        h3 { font-size: clamp(1.25rem, 1vw + .9rem, 1.5rem); font-weight: 500; }
+        .display {
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            font-size: clamp(2.6rem, 5.5vw + 1rem, 4.5rem);
+            line-height: 1.04;
+            letter-spacing: -0.025em;
+            color: var(--bone);
+            font-variation-settings: "opsz" 144;
+            margin: 0;
+        }
+
+        p, ul, ol { margin: 0 0 1.25em; }
+        a {
+            color: var(--brass);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: color .15s ease, border-color .15s ease;
+        }
+        a:hover { color: var(--brass-hi); border-color: var(--brass); }
+        a:focus-visible {
+            outline: 2px solid var(--bone);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        img { max-width: 100%; height: auto; display: block; }
+
+        hr { border: 0; border-top: 1px solid var(--paper-line); margin: 3rem 0; }
+
+        /* — Eyebrow + meta labels — */
+        .eyebrow {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--brass);
+            display: inline-block;
+        }
+        .meta-mono {
+            font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+            font-size: 0.8125rem;
+            letter-spacing: 0.04em;
+            color: var(--paper-soft);
+        }
+        .small-meta {
+            font-size: 0.8125rem;
+            line-height: 1.4;
+            color: var(--paper-mute);
+            letter-spacing: 0.02em;
+        }
+
+        /* — Layout — */
+        .container {
+            width: 100%;
+            max-width: var(--max);
+            margin-inline: auto;
+            padding-inline: clamp(1rem, 3vw, 2rem);
+        }
+        .read-col { max-width: var(--read); }
+
+        section.section { padding-block: clamp(3rem, 6vw, 5rem); }
+        section.section--lg { padding-block: clamp(4rem, 8vw, 8rem); }
+        section.section--sm { padding-block: clamp(2rem, 4vw, 3.5rem); }
+
+        .section--bone {
+            background: var(--bone);
+            color: #1A1816;
+        }
+        .section--bone h1, .section--bone h2, .section--bone h3 { color: #0A1628; }
+        .section--bone .eyebrow { color: #8A6618; }
+        .section--bone .small-meta { color: #5B554D; }
+        .section--bone a { color: #1B3A6B; }
+        .section--bone a:hover { color: var(--navy); border-color: #1B3A6B; }
+        .section--bone .meta-mono { color: #5B554D; }
+
+        .section--navy-2 { background: var(--navy-2); }
+        .section--brass {
+            background: var(--brass);
+            color: var(--navy);
+        }
+        .section--brass h1, .section--brass h2, .section--brass h3 { color: var(--navy); }
+        .section--brass .eyebrow { color: var(--navy); }
+        .section--brass a { color: var(--navy); border-bottom-color: var(--navy); }
+
+        /* — Buttons — */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            min-height: 48px;
+            padding: 0.75rem 1.5rem;
+            font: 500 0.9375rem/1 'Inter', sans-serif;
+            letter-spacing: 0.02em;
+            border-radius: 2px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background .15s ease, color .15s ease, border-color .15s ease;
+            white-space: nowrap;
+        }
+        .btn--primary {
+            background: var(--brass);
+            color: var(--navy);
+            border-color: var(--brass);
+        }
+        .btn--primary:hover {
+            background: var(--brass-hi);
+            border-color: var(--brass-hi);
+            color: var(--navy);
+        }
+        .btn--secondary {
+            background: transparent;
+            color: var(--paper);
+            border-color: var(--paper-line-strong);
+        }
+        .btn--secondary:hover {
+            background: var(--paper);
+            color: var(--navy);
+            border-color: var(--paper);
+        }
+        .btn--ghost {
+            background: transparent;
+            color: var(--brass);
+            border: 0;
+            padding: 0.5rem 0;
+            min-height: 32px;
+            border-bottom: 1px solid var(--brass);
+            border-radius: 0;
+        }
+        .btn--ghost:hover { color: var(--brass-hi); border-bottom-color: var(--brass-hi); }
+
+        /* — Site header — */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(10, 22, 40, 0.92);
+            backdrop-filter: saturate(140%) blur(10px);
+            -webkit-backdrop-filter: saturate(140%) blur(10px);
+            border-bottom: 1px solid transparent;
+            transition: border-color .2s ease, background .2s ease;
+        }
+        .site-header.is-scrolled {
+            border-bottom-color: var(--brass);
+            background: rgba(10, 22, 40, 0.96);
+        }
+        .site-header__inner {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            padding-block: 1rem;
+        }
+        .brand {
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            font-size: 1.0625rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--bone);
+            border: 0;
+            display: inline-flex;
+            align-items: baseline;
+            gap: 0.6rem;
+        }
+        .brand:hover { color: var(--brass); border: 0; }
+        .brand__dot {
+            width: 8px;
+            height: 8px;
+            background: var(--brass);
+            border-radius: 50%;
+            display: inline-block;
+            transform: translateY(-1px);
+        }
+        .brand__suffix {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 0.6875rem;
+            letter-spacing: 0.22em;
+            color: var(--paper-mute);
+            text-transform: uppercase;
+        }
+        @media (max-width: 720px) {
+            .brand__suffix { display: none; }
+        }
+
+        .primary-nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        .primary-nav a {
+            font: 500 0.9375rem/1 'Inter', sans-serif;
+            color: var(--paper-soft);
+            letter-spacing: 0.01em;
+            padding: 0.5rem 0;
+            border: 0;
+            border-bottom: 1px solid transparent;
+        }
+        .primary-nav a:hover,
+        .primary-nav a.is-active {
+            color: var(--bone);
+            border-bottom-color: var(--brass);
+        }
+
+        .nav-toggle {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: 1px solid var(--paper-line-strong);
+            color: var(--bone);
+            min-width: 48px;
+            min-height: 44px;
+            padding: 0.5rem 0.875rem;
+            font: 500 0.875rem 'Inter', sans-serif;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border-radius: 2px;
+            cursor: pointer;
+            gap: 0.5rem;
+        }
+        .nav-toggle__bars {
+            display: inline-flex;
+            flex-direction: column;
+            gap: 4px;
+            width: 18px;
+        }
+        .nav-toggle__bars span {
+            display: block;
+            height: 1.5px;
+            background: var(--bone);
+            transition: transform .2s ease, opacity .2s ease;
+        }
+        .nav-toggle[aria-expanded="true"] .nav-toggle__bars span:nth-child(1) { transform: translateY(5.5px) rotate(45deg); }
+        .nav-toggle[aria-expanded="true"] .nav-toggle__bars span:nth-child(2) { opacity: 0; }
+        .nav-toggle[aria-expanded="true"] .nav-toggle__bars span:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
+
+        @media (max-width: 880px) {
+            .nav-toggle { display: inline-flex; }
+            .primary-nav {
+                position: fixed;
+                inset: 72px 0 0 0;
+                background: var(--navy);
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: 0;
+                padding: 2.5rem clamp(1rem, 4vw, 2rem) 6rem;
+                transform: translateX(100%);
+                transition: transform .25s ease;
+                overflow-y: auto;
+                z-index: 60;
+            }
+            .primary-nav.is-open { transform: translateX(0); }
+            .primary-nav a {
+                font-family: 'Fraunces', serif;
+                font-weight: 500;
+                font-size: 2rem;
+                line-height: 1.1;
+                padding: 1.25rem 0;
+                width: 100%;
+                border-bottom: 1px solid var(--paper-line);
+                color: var(--bone);
+            }
+            .primary-nav a:hover,
+            .primary-nav a.is-active {
+                color: var(--brass);
+                border-bottom-color: var(--paper-line-strong);
+            }
+        }
+
+        /* — Footer — */
+        .site-footer {
+            background: #06101F;
+            color: var(--paper-soft);
+            border-top: 1px solid var(--paper-line);
+            padding-block: clamp(3rem, 5vw, 5rem) 2rem;
+            margin-top: 0;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 3rem 2rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid var(--paper-line);
+        }
+        @media (max-width: 880px) {
+            .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 2.5rem 1.5rem; }
+        }
+        @media (max-width: 480px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 2.25rem; }
+        }
+        .footer-grid h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--brass);
+            margin-bottom: 1rem;
+        }
+        .footer-grid p, .footer-grid ul, .footer-grid address {
+            font-size: 0.875rem;
+            line-height: 1.6;
+            color: var(--paper-soft);
+            font-style: normal;
+            margin: 0 0 0.75rem;
+        }
+        .footer-grid ul { list-style: none; padding: 0; }
+        .footer-grid li { margin-bottom: 0.5rem; }
+        .footer-grid a {
+            color: var(--paper);
+            border-bottom: 1px solid transparent;
+        }
+        .footer-grid a:hover { color: var(--brass); border-bottom-color: var(--brass); }
+
+        .footer-baseline {
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .footer-baseline__name {
+            font-family: 'Fraunces', serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: 0.9375rem;
+            color: var(--paper-mute);
+            line-height: 1.4;
+        }
+        .footer-baseline__copy {
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            color: var(--paper-mute);
+            text-transform: uppercase;
+        }
+
+        /* — Skip link — */
+        .skip-link {
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 0.75rem 1rem;
+            background: var(--brass);
+            color: var(--navy);
+            font-weight: 600;
+            transform: translateY(-150%);
+            z-index: 100;
+        }
+        .skip-link:focus { transform: translateY(0); }
+
+        /* — Card primitive — */
+        .card {
+            display: flex;
+            flex-direction: column;
+            gap: 0.875rem;
+            padding: 1.75rem;
+            background: var(--navy-2);
+            border: 1px solid var(--paper-line);
+            color: var(--paper);
+            text-decoration: none;
+            transition: border-color .15s ease, background .15s ease, transform .15s ease;
+            height: 100%;
+        }
+        .card:hover {
+            border-color: var(--brass);
+            background: var(--navy-3);
+            color: var(--paper);
+        }
+        .card:hover h3 { color: var(--bone); }
+        .card__head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .card h3 { color: var(--paper); transition: color .15s ease; }
+        .card p { color: var(--paper-soft); margin: 0; }
+        .card__footer {
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid var(--paper-line);
+            color: var(--paper-mute);
+            font-size: 0.8125rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* — Article body (markdown output) — */
+        .prose { max-width: var(--read); }
+        .prose h2 { margin-top: 2.5rem; margin-bottom: 1rem; }
+        .prose h3 { margin-top: 2rem; margin-bottom: 0.75rem; }
+        .prose p, .prose ul, .prose ol { font-size: 1.0625rem; line-height: 1.7; color: var(--paper); }
+        .prose ul, .prose ol { padding-left: 1.4rem; }
+        .prose li { margin-bottom: 0.4rem; }
+        .prose strong { color: var(--bone); font-weight: 600; }
+        .prose em { font-style: italic; color: var(--paper); }
+        .prose a { color: var(--brass); border-bottom: 1px solid var(--brass-mute); }
+        .prose a:hover { color: var(--brass-hi); border-bottom-color: var(--brass-hi); }
+        .prose blockquote {
+            border-left: 2px solid var(--brass);
+            padding: 0.25rem 0 0.25rem 1.5rem;
+            margin: 1.5rem 0;
+            color: var(--bone);
+            font-family: 'Fraunces', serif;
+            font-style: italic;
+            font-size: 1.25rem;
+            line-height: 1.45;
+        }
+        .prose hr { border-top: 1px solid var(--paper-line); margin: 2.5rem 0; }
+        .prose code {
+            background: rgba(232,228,217,.08);
+            color: var(--brass-hi);
+            padding: .125rem .375rem;
+            border-radius: 2px;
+            font-size: .9em;
+            font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+        }
+        .prose pre {
+            background: #050B17;
+            color: var(--bone);
+            padding: 1rem 1.25rem;
+            overflow-x: auto;
+            border: 1px solid var(--paper-line);
+            font-size: .9em;
+            line-height: 1.55;
+        }
+        .prose pre code { background: transparent; padding: 0; color: inherit; }
+        .section--bone .prose p,
+        .section--bone .prose ul,
+        .section--bone .prose ol,
+        .section--bone .prose li { color: #1A1816; }
+        .section--bone .prose strong { color: #0A1628; }
+        .section--bone .prose blockquote { color: #0A1628; }
+        .section--bone .prose a { color: #1B3A6B; border-bottom-color: rgba(27,58,107,.4); }
+        .section--bone .prose code { background: rgba(10,22,40,.06); color: #1B3A6B; }
+
+        /* — Utility — */
+        .event-row__sep { margin: 0 0.5rem; color: var(--paper-line-strong); }
+        .dim { color: var(--paper-mute); }
+        .nowrap { white-space: nowrap; }
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            border: 0;
+        }
+
+        /* — Forms (mailto-only site but inputs may show in admin previews) — */
+        input, textarea, select, button { font: inherit; }
+        input[type="text"], input[type="email"], textarea {
+            font-size: 16px; /* prevent iOS auto-zoom */
+        }
+
+        /* — Print — */
+        @media print {
+            body { background: #fff; color: #000; }
+            .site-header, .site-footer, .nav-toggle { display: none; }
+        }
+    </style>
+    </head>
+<body>
+    <a href="program.html#main" class="skip-link">Skip to content</a>
+
+    <header class="site-header" id="site-header">
+        <div class="container site-header__inner">
+            <a class="brand" href="index.html" aria-label="CECAM — home">
+                <span class="brand__dot" aria-hidden="true"></span>
+                CECAM
+                <span class="brand__suffix">Centre Européen de Calcul Atomique et Moléculaire</span>
+            </a>
+            <button type="button" class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open navigation">
+                <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+                Menu
+            </button>
+            <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+                <a href="program.html">Program</a>
+                <a href="flagship-call.html">Flagship Call</a>
+                <a href="activities.html">Activities</a>
+                <a href="about.html">About</a>
+                <a href="news.html">News</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        
+<section class="program-title">
+    <div class="container program-title__grid">
+        <div class="program-title__copy">
+            <p class="eyebrow">2026 – 2027</p>
+            <h1 class="display">Program.</h1>
+            <p class="program-title__lede">
+                The full calendar of CECAM workshops, schools and conferences across our European
+                network. The 2027 – 2028 program is currently being assembled from the
+                <a href="flagship-call.html">open Flagship Call</a>.
+            </p>
+        </div>
+        <figure class="program-title__figure">
+            <img src="uploads/lecture-hall.jpg" alt="Mathematics lecture at a university auditorium — multiple blackboards filled with handwritten matrix algebra.">
+            <figcaption class="hero__caption">Method · Theory · Practice</figcaption>
+        </figure>
+    </div>
+    <div class="container">
+        <nav class="program-jump" aria-label="Jump to section">
+                            <a href="program.html#workshops" class="program-jump__item">
+                    <span class="program-jump__count">4</span>
+                    <span class="program-jump__label">Workshops</span>
+                </a>
+                            <a href="program.html#schools" class="program-jump__item">
+                    <span class="program-jump__count">3</span>
+                    <span class="program-jump__label">Schools</span>
+                </a>
+                            <a href="program.html#conferences" class="program-jump__item">
+                    <span class="program-jump__count">2</span>
+                    <span class="program-jump__label">Conferences</span>
+                </a>
+                            <a href="program.html#events" class="program-jump__item">
+                    <span class="program-jump__count">2</span>
+                    <span class="program-jump__label">Events</span>
+                </a>
+                    </nav>
+    </div>
+</section>
+
+    <section class="section program-group" id="workshops">
+        <div class="container program-group__inner">
+            <aside class="program-group__rail" aria-hidden="true">
+                <div class="program-group__count">
+                    <span class="program-group__count-n">4</span>
+                    <span class="program-group__count-divider">/</span>
+                    <span class="program-group__count-label">Workshops</span>
+                </div>
+                <p class="small-meta program-group__intro">Five-day flagship and Lorentz workshops at CECAM nodes across Europe.</p>
+            </aside>
+            <div class="program-group__list">
+                <header class="program-group__head">
+                    <h2>Workshops</h2>
+                </header>
+                                    <ol class="event-list">
+                                                                                                            <li>
+                                <a class="event-row" href="program/free-energy-methods-biological-simulation.html">
+                                    <div class="event-row__date">
+                                                                                    <span class="event-row__day">09</span>
+                                            <span class="event-row__month">Nov</span>
+                                            <span class="event-row__year">2026</span>
+                                                                            </div>
+                                    <div class="event-row__body">
+                                        <p class="eyebrow event-row__type">workshop</p>
+                                        <h3>Free-Energy Methods in Biological Simulation</h3>
+                                        <p class="event-row__summary">Enhanced-sampling methods for binding free energies, protein dynamics, and drug discovery.</p>
+                                        <p class="small-meta">
+                                            <span class="event-row__loc">CECAM-FR-RA · Lyon · France</span>
+                                                                                            <span class="event-row__sep">·</span>
+                                                <span>B. Dehez, S. Marsili, V. Limongelli</span>
+                                                                                    </p>
+                                    </div>
+                                    <div class="event-row__range meta-mono">
+                                                                                    9 Nov – 13 Nov 2026
+                                                                            </div>
+                                </a>
+                            </li>
+                                                                                                            <li>
+                                <a class="event-row" href="program/deep-learning-in-materials-science.html">
+                                    <div class="event-row__date">
+                                                                                    <span class="event-row__day">24</span>
+                                            <span class="event-row__month">Mar</span>
+                                            <span class="event-row__year">2027</span>
+                                                                            </div>
+                                    <div class="event-row__body">
+                                        <p class="eyebrow event-row__type">workshop</p>
+                                        <h3>Deep Learning in Materials Science: Interpretation, Generalization, Overfitting</h3>
+                                        <p class="event-row__summary">A working meeting on what machine-learned interatomic potentials actually learn — and what they don&#039;t.</p>
+                                        <p class="small-meta">
+                                            <span class="event-row__loc">CECAM-HQ · EPFL Lausanne · Switzerland</span>
+                                                                                            <span class="event-row__sep">·</span>
+                                                <span>Felix Musil, Nataliya Lopanitsyna, Michele Ceriotti</span>
+                                                                                    </p>
+                                    </div>
+                                    <div class="event-row__range meta-mono">
+                                                                                    24 Mar – 26 Mar 2027
+                                                                            </div>
+                                </a>
+                            </li>
+                                                                                                            <li>
+                                <a class="event-row" href="program/fracture-of-amorphous-materials-across-the-scales.html">
+                                    <div class="event-row__date">
+                                                                                    <span class="event-row__day">12</span>
+                                            <span class="event-row__month">Apr</span>
+                                            <span class="event-row__year">2027</span>
+                                                                            </div>
+                                    <div class="event-row__body">
+                                        <p class="eyebrow event-row__type">workshop</p>
+                                        <h3>Fracture of Amorphous Materials Across the Scales</h3>
+                                        <p class="event-row__summary">The 2027 CECAM-Lorentz joint workshop on multiscale modelling of fracture in glassy and polymeric matter.</p>
+                                        <p class="small-meta">
+                                            <span class="event-row__loc">CECAM-HQ · EPFL Lausanne · Switzerland</span>
+                                                                                            <span class="event-row__sep">·</span>
+                                                <span>Maximilian Ries, Sebastian Pfaller, Andrea Giuntoli</span>
+                                                                                    </p>
+                                    </div>
+                                    <div class="event-row__range meta-mono">
+                                                                                    12 Apr – 16 Apr 2027
+                                                                            </div>
+                                </a>
+                            </li>
+                                                                                                            <li>
+                                <a class="event-row" href="program/electronic-structure-of-correlated-materials.html">
+                                    <div class="event-row__date">
+                                                                                    <span class="event-row__day">17</span>
+                                            <span class="event-row__month">May</span>
+                                            <span class="event-row__year">2027</span>
+                                                                            </div>
+                                    <div class="event-row__body">
+                                        <p class="eyebrow event-row__type">workshop</p>
+                                        <h3>Electronic Structure of Correlated Materials: Beyond DFT</h3>
+                                        <p class="event-row__summary">Methods beyond standard density-functional theory for strongly correlated electron systems.</p>
+                                        <p class="small-meta">
+                                            <span class="event-row__loc">CECAM-DE-MM1 · Mainz · Germany</span>
+                                                                                            <span class="event-row__sep">·</span>
+                                                <span>C. Antonini, K. Held, A. Toschi</span>
+                                                                                    </p>
+                                    </div>
+                                    <div class="event-row__range meta-mono">
+                                                                                    17 May – 21 May 2027
+                                                                            </div>
+                                </a>
+                            </li>
+                                            </ol>
+                            </div>
+        </div>
+    </section>
+    <section class="section program-group" id="schools">
+        <div class="container program-group__inner">
+            <aside class="program-group__rail" aria-hidden="true">
+                <div class="program-group__count">
+                    <span class="program-group__count-n">3</span>
+                    <span class="program-group__count-divider">/</span>
+                    <span class="program-group__count-label">Schools</span>
+                </div>
+                <p class="small-meta program-group__intro">Intensive hands-on schools — code, theory, and practice with method authors.</p>
+            </aside>
+            <div class="program-group__list">
+                <header class="program-group__head">
+                    <h2>Schools</h2>
+                </header>
+                                    <ol class="event-list">
+                                                                                                            <li>
+                                <a class="event-row" href="program/machine-learning-potentials-summer-school.html">
+                                    <div class="event-row__date">
+                                                                                    <span class="event-row__day">06</span>
+                                            <span class="event-row__month">Jul</span>
+                                            <span class="event-row__year">2026</span>
+                                                                            </div>
+                                    <div class="event-row__body">
+                                        <p class="eyebrow event-row__type">school</p>
+                                        <h3>Machine-Learning Interatomic Potentials Summer School</h3>
+                                        <p class="event-row__summary">Theory and practice of MLIPs: descriptors, architectures, active learning, and production-grade workflows.</p>
+                                        <p class="small-meta">
+                                            <span class="event-row__loc">CECAM-IT-SIMUL · Rome · Italy</span>
+                                                                                            <span class="event-row__sep">·</span>
+                                                <span>L. Bonati, M. Mariani, A. Laio</span>
+                                                                                    </p>
+                                    </div>
+                                    <div class="event-row__range meta-mono">
+                                                                                    6 Jul – 10 Jul 2026
+                                                                            </div>
+                                </a>
+                            </li>
+                                                                                                            <li>
+                                <a class="event-row" href="program/hands-on-fleur-all-electron-dft-for-solids.html">
+                                    <div class="event-row__date">
+                                                                                    <span class="event-row__day">14</span>
+                                            <span class="event-row__month">Sep</span>
+                                            <span class="event-row__year">2026</span>
+                                                                            </div>
+                                    <div class="event-row__body">
+                                        <p class="eyebrow event-row__type">school</p>
+                                        <h3>Hands-on Fleur: All-Electron DFT for Solids</h3>
+                                        <p class="event-row__summary">Practical week with the FLEUR code — full-potential LAPW for magnetism, spin-orbit, and force calculations.</p>
+                                        <p class="small-meta">
+                                            <span class="event-row__loc">Forschungszentrum Jülich · Germany</span>
+                                                                                            <span class="event-row__sep">·</span>
+                                                <span>Gustav Bihlmayer, Daniel Wortmann, Stefan Blügel</span>
+                                                                                    </p>
+                                    </div>
+                                    <div class="event-row__range meta-mono">
+                                                                                    14 Sep – 18 Sep 2026
+                                                                            </div>
+                                </a>
+                            </li>
+                                                                                                            <li>
+                                <a class="event-row" href="program/quantum-monte-carlo-school.html">
+                                    <div class="event-row__date">
+                                                                                    <span class="event-row__day">22</span>
+                                            <span class="event-row__month">Feb</span>
+                                            <span class="event-row__year">2027</span>
+                                                                            </div>
+                                    <div class="event-row__body">
+                                        <p class="eyebrow event-row__type">school</p>
+                                        <h3>Quantum Monte Carlo for Realistic Systems</h3>
+                                        <p class="event-row__summary">Foundations and modern practice of QMC for molecules, materials and finite-temperature systems.</p>
+                                        <p class="small-meta">
+                                            <span class="event-row__loc">CECAM-CH · Lugano · Switzerland</span>
+                                                                                            <span class="event-row__sep">·</span>
+                                                <span>C. Filippi, M. Casula, S. Sorella</span>
+                                                                                    </p>
+                                    </div>
+                                    <div class="event-row__range meta-mono">
+                                                                                    22 Feb – 26 Feb 2027
+                                                                            </div>
+                                </a>
+                            </li>
+                                            </ol>
+                            </div>
+        </div>
+    </section>
+    <section class="section program-group" id="conferences">
+        <div class="container program-group__inner">
+            <aside class="program-group__rail" aria-hidden="true">
+                <div class="program-group__count">
+                    <span class="program-group__count-n">2</span>
+                    <span class="program-group__count-divider">/</span>
+                    <span class="program-group__count-label">Conferences</span>
+                </div>
+                <p class="small-meta program-group__intro">CECAM and joint Psi-k / MARVEL research conferences.</p>
+            </aside>
+            <div class="program-group__list">
+                <header class="program-group__head">
+                    <h2>Conferences</h2>
+                </header>
+                                    <ol class="event-list">
+                                                                                                            <li>
+                                <a class="event-row" href="program/multiscale-modelling-living-systems.html">
+                                    <div class="event-row__date">
+                                                                                    <span class="event-row__day">19</span>
+                                            <span class="event-row__month">Oct</span>
+                                            <span class="event-row__year">2026</span>
+                                                                            </div>
+                                    <div class="event-row__body">
+                                        <p class="eyebrow event-row__type">conference</p>
+                                        <h3>Multiscale Modelling of Living Systems</h3>
+                                        <p class="event-row__summary">From molecular detail to cellular function — coupling MD, coarse-graining, and systems biology models.</p>
+                                        <p class="small-meta">
+                                            <span class="event-row__loc">CECAM-NL · Amsterdam · The Netherlands</span>
+                                                                                            <span class="event-row__sep">·</span>
+                                                <span>P. Bolhuis, M. Heinemann, S. Marrink</span>
+                                                                                    </p>
+                                    </div>
+                                    <div class="event-row__range meta-mono">
+                                                                                    19 Oct – 22 Oct 2026
+                                                                            </div>
+                                </a>
+                            </li>
+                                                                                                            <li>
+                                <a class="event-row" href="program/spin-orbit-coupling-in-electronic-structure.html">
+                                    <div class="event-row__date">
+                                                                                    <span class="event-row__day">08</span>
+                                            <span class="event-row__month">Jun</span>
+                                            <span class="event-row__year">2027</span>
+                                                                            </div>
+                                    <div class="event-row__body">
+                                        <p class="eyebrow event-row__type">conference</p>
+                                        <h3>Spin–Orbit Coupling in Electronic Structure</h3>
+                                        <p class="event-row__summary">Recent theoretical and computational developments at the interface of spin-orbit interaction and electronic structure.</p>
+                                        <p class="small-meta">
+                                            <span class="event-row__loc">CECAM-DE-MM1 · Mainz · Germany</span>
+                                                                                            <span class="event-row__sep">·</span>
+                                                <span>Psi-k / CECAM joint conference · S. Heinze, R. Wiesendanger, M. Bode</span>
+                                                                                    </p>
+                                    </div>
+                                    <div class="event-row__range meta-mono">
+                                                                                    8 Jun – 11 Jun 2027
+                                                                            </div>
+                                </a>
+                            </li>
+                                            </ol>
+                            </div>
+        </div>
+    </section>
+    <section class="section program-group" id="events">
+        <div class="container program-group__inner">
+            <aside class="program-group__rail" aria-hidden="true">
+                <div class="program-group__count">
+                    <span class="program-group__count-n">2</span>
+                    <span class="program-group__count-divider">/</span>
+                    <span class="program-group__count-label">Events</span>
+                </div>
+                <p class="small-meta program-group__intro">Discussion meetings, working groups, and short ad-hoc gatherings.</p>
+            </aside>
+            <div class="program-group__list">
+                <header class="program-group__head">
+                    <h2>Events</h2>
+                </header>
+                                    <ol class="event-list">
+                                                                                                            <li>
+                                <a class="event-row" href="program/open-data-in-computational-chemistry.html">
+                                    <div class="event-row__date">
+                                                                                    <span class="event-row__day">07</span>
+                                            <span class="event-row__month">Dec</span>
+                                            <span class="event-row__year">2026</span>
+                                                                            </div>
+                                    <div class="event-row__body">
+                                        <p class="eyebrow event-row__type">event</p>
+                                        <h3>Open Data in Computational Chemistry: Standards, Repositories, Practice</h3>
+                                        <p class="event-row__summary">A working meeting on data standards, repositories, and FAIR practice for computational chemistry.</p>
+                                        <p class="small-meta">
+                                            <span class="event-row__loc">CECAM-HQ · EPFL Lausanne · Switzerland</span>
+                                                                                            <span class="event-row__sep">·</span>
+                                                <span>G. Henkelman, L. Hammerschmidt, S. Marini</span>
+                                                                                    </p>
+                                    </div>
+                                    <div class="event-row__range meta-mono">
+                                                                                    7 Dec – 9 Dec 2026
+                                                                            </div>
+                                </a>
+                            </li>
+                                                                                                            <li>
+                                <a class="event-row" href="program/integration-of-esl-modules-into-electronic-structure-codes.html">
+                                    <div class="event-row__date">
+                                                                                    <span class="event-row__day">17</span>
+                                            <span class="event-row__month">Feb</span>
+                                            <span class="event-row__year">2027</span>
+                                                                            </div>
+                                    <div class="event-row__body">
+                                        <p class="eyebrow event-row__type">event</p>
+                                        <h3>Integration of ESL Modules into Electronic-Structure Codes</h3>
+                                        <p class="event-row__summary">A two-week coding sprint on the Electronic Structure Library and its integration into community codes.</p>
+                                        <p class="small-meta">
+                                            <span class="event-row__loc">CECAM-HQ · EPFL Lausanne · Switzerland</span>
+                                                                                            <span class="event-row__sep">·</span>
+                                                <span>M. Marques, Y. Pouillon, D. Strubbe</span>
+                                                                                    </p>
+                                    </div>
+                                    <div class="event-row__range meta-mono">
+                                                                                    17 Feb – 28 Feb 2027
+                                                                            </div>
+                                </a>
+                            </li>
+                                            </ol>
+                            </div>
+        </div>
+    </section>
+
+<section class="section section--bone">
+    <div class="container split-block">
+        <div class="split-block__left">
+            <p class="eyebrow">Flagship Call</p>
+            <h2>Propose the next workshop.</h2>
+        </div>
+        <div class="split-block__right">
+            <p>
+                CECAM's program comes from the community. The 2027 – 2028 Flagship Call solicits
+                workshop and school proposals from researchers worldwide, with submissions open
+                until <strong>17 July 2026</strong>. Read the call, check the format and timeline,
+                and submit through the central CECAM portal.
+            </p>
+            <p>
+                <a class="btn btn--primary" href="flagship-call.html" style="background:#1B3A6B;color:#F5F1E8;border-color:#1B3A6B;">Read the Flagship Call</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .program-title {
+        padding-block: clamp(3.5rem, 7vw, 7rem);
+        background:
+            radial-gradient(ellipse 70% 60% at 90% 0%, rgba(27,58,107,.4) 0, rgba(10,22,40,0) 60%),
+            var(--navy);
+        border-bottom: 1px solid var(--paper-line);
+    }
+    .program-title__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: clamp(2rem, 4vw, 4rem);
+        align-items: end;
+    }
+    @media (min-width: 960px) {
+        .program-title__grid { grid-template-columns: 7fr 5fr; }
+    }
+    .program-title .display {
+        margin-top: 1rem;
+        max-width: 12ch;
+    }
+    .program-title__lede {
+        max-width: 38em;
+        font-size: clamp(1rem, .6vw + .9rem, 1.1875rem);
+        line-height: 1.6;
+        color: var(--paper);
+        margin-top: 1.5rem;
+    }
+    .program-title__figure {
+        position: relative;
+        margin: 0;
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        border: 1px solid var(--paper-line);
+    }
+    .program-title__figure img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: grayscale(.25) brightness(.92) contrast(1.05);
+    }
+    .program-title__figure::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(225deg, rgba(27,58,107,.35) 0%, rgba(10,22,40,0) 60%);
+        pointer-events: none;
+    }
+    .program-jump {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1px;
+        background: var(--paper-line);
+        border: 1px solid var(--paper-line);
+        margin-top: 3rem;
+        max-width: 720px;
+    }
+    @media (min-width: 720px) { .program-jump { grid-template-columns: repeat(4, 1fr); } }
+    .program-jump__item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        padding: 1.25rem 1.25rem;
+        background: var(--navy);
+        color: var(--paper);
+        border: 0;
+        min-height: 88px;
+    }
+    .program-jump__item:hover { background: var(--navy-3); border: 0; color: var(--bone); }
+    .program-jump__count {
+        font-family: 'Fraunces', serif;
+        font-weight: 600;
+        font-size: 2rem;
+        line-height: 1;
+        color: var(--brass);
+        font-variation-settings: "opsz" 144;
+    }
+    .program-jump__label {
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--paper-soft);
+    }
+
+    .program-group { padding-block: clamp(3rem, 5vw, 5rem); border-bottom: 1px solid var(--paper-line); }
+    .program-group:last-of-type { border-bottom: 0; }
+    .program-group__inner {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    @media (min-width: 900px) {
+        .program-group__inner { grid-template-columns: 4fr 8fr; gap: 3rem; }
+    }
+    .program-group__rail { position: sticky; top: 96px; align-self: start; }
+    @media (max-width: 900px) { .program-group__rail { position: static; } }
+    .program-group__count {
+        display: flex;
+        align-items: baseline;
+        gap: 0.5rem;
+        line-height: 1;
+        margin-bottom: 1rem;
+    }
+    .program-group__count-n {
+        font-family: 'Fraunces', serif;
+        font-weight: 600;
+        font-size: clamp(3.5rem, 6vw, 5.5rem);
+        color: var(--brass);
+        font-variation-settings: "opsz" 144;
+        letter-spacing: -0.02em;
+    }
+    .program-group__count-divider {
+        font-family: 'Fraunces', serif;
+        font-weight: 400;
+        font-size: 2rem;
+        color: var(--paper-line-strong);
+    }
+    .program-group__count-label {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.8125rem;
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--paper-soft);
+    }
+    .program-group__intro { max-width: 24em; }
+    .program-group__head { margin-bottom: 1.5rem; }
+    .program-group__empty {
+        padding: 1.5rem 0;
+        color: var(--paper-mute);
+        border-top: 1px solid var(--paper-line);
+        border-bottom: 1px solid var(--paper-line);
+    }
+
+    .event-list { list-style: none; padding: 0; margin: 0; }
+    .event-list li { border-top: 1px solid var(--paper-line); }
+    .event-list li:last-child { border-bottom: 1px solid var(--paper-line); }
+    .event-row {
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        gap: 1.25rem;
+        padding: 1.75rem 0;
+        align-items: start;
+        color: var(--paper);
+        border: 0;
+        transition: background .15s ease;
+    }
+    @media (min-width: 720px) {
+        .event-row { grid-template-columns: 80px 1fr auto; gap: 2rem; }
+    }
+    .event-row:hover { background: rgba(232,228,217,.03); border: 0; color: var(--bone); }
+    .event-row:hover h3 { color: var(--brass); }
+    .event-row__date {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        line-height: 1;
+        padding-top: 0.25rem;
+    }
+    .event-row__day {
+        font-family: 'Fraunces', serif;
+        font-weight: 600;
+        font-size: 2.5rem;
+        color: var(--bone);
+        line-height: 0.9;
+    }
+    .event-row__month {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--brass);
+        margin-top: 0.35rem;
+    }
+    .event-row__year {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.6875rem;
+        color: var(--paper-mute);
+        letter-spacing: 0.08em;
+        margin-top: 0.2rem;
+    }
+    .event-row__type { color: var(--brass); margin-bottom: 0.4rem; }
+    .event-row h3 { margin: 0; transition: color .15s ease; max-width: 36ch; }
+    .event-row__summary {
+        margin: 0.5rem 0 0.75rem;
+        max-width: 60ch;
+        color: var(--paper-soft);
+    }
+    .event-row__sep { margin: 0 0.4rem; color: var(--paper-line-strong); }
+    .event-row__range {
+        white-space: nowrap;
+        padding-top: 0.4rem;
+        color: var(--paper-mute);
+    }
+    @media (max-width: 720px) { .event-row__range { display: none; } }
+</style>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Headquarters</h4>
+                    <address>
+                        EPFL CECAM<br>
+                        Avenue de Forel 3<br>
+                        BCH 3103<br>
+                        1015 Lausanne<br>
+                        Switzerland
+                    </address>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <p><a href="mailto:helpdesk@cecam.org">helpdesk@cecam.org</a></p>
+                    <p><a href="https://www.cecam.org/register-our-mailing-list" rel="noopener">Mailing-list signup →</a></p>
+                    <p class="small-meta">Phone available on request from the helpdesk.</p>
+                </div>
+                <div>
+                    <h4>Activities</h4>
+                    <ul>
+                        <li><a href="activities/mixed-gen.html">Mixed-Gen</a></li>
+                        <li><a href="activities/cecam-lectures.html">CECAM Lectures</a></li>
+                        <li><a href="activities/marvel-classics.html">MARVEL Classics</a></li>
+                        <li><a href="activities/mansigh-series.html">Mansigh Series</a></li>
+                        <li><a href="activities/alder-prize.html">Alder Prize</a></li>
+                        <li><a href="activities/webinars.html">Webinars</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>The institute</h4>
+                    <ul>
+                        <li><a href="about.html">About CECAM</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="documents.html">Documents</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                        <li><a href="privacy-policy.html">Privacy policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-baseline">
+                <p class="footer-baseline__name">Centre Européen de Calcul Atomique et Moléculaire</p>
+                <p class="footer-baseline__copy">© 1969–2026 · CECAM, Lausanne</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var header = document.getElementById('site-header');
+            var toggle = document.querySelector('.nav-toggle');
+            var nav    = document.getElementById('primary-nav');
+            if (header) {
+                var onScroll = function () {
+                    if (window.scrollY > 80) header.classList.add('is-scrolled');
+                    else header.classList.remove('is-scrolled');
+                };
+                onScroll();
+                window.addEventListener('scroll', onScroll, { passive: true });
+            }
+            if (toggle && nav) {
+                toggle.addEventListener('click', function () {
+                    var open = toggle.getAttribute('aria-expanded') === 'true';
+                    toggle.setAttribute('aria-expanded', String(!open));
+                    toggle.setAttribute('aria-label', open ? 'Open navigation' : 'Close navigation');
+                    nav.classList.toggle('is-open', !open);
+                    document.body.classList.toggle('nav-open', !open);
+                });
+                nav.addEventListener('click', function (e) {
+                    if (e.target && e.target.tagName === 'A') {
+                        toggle.setAttribute('aria-expanded', 'false');
+                        nav.classList.remove('is-open');
+                        document.body.classList.remove('nav-open');
+                    }
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

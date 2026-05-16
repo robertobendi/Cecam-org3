@@ -3,13 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}{{ site.name }} — Centre Européen de Calcul Atomique et Moléculaire{% endblock %}</title>
-    {% if meta_description is defined %}
-        <meta name="description" content="{{ meta_description }}">
-    {% else %}
-        <meta name="description" content="CECAM runs the European program of flagship workshops, schools, and conferences in atomistic and molecular simulation.">
-    {% endif %}
-    <meta name="theme-color" content="#0A1628">
+    <title>The 2027 CECAM-Lorentz workshop has been selected. · CECAM News</title>
+            <meta name="description" content="Congratulations to Maximilian Ries, Sebastian Pfaller and Andrea Giuntoli: their proposal &quot;Fracture of Amorphous Materials Across the Scales&quot; is the 2027 CECAM-Lorentz workshop.">
+        <meta name="theme-color" content="#0A1628">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -534,14 +530,13 @@
             .site-header, .site-footer, .nav-toggle { display: none; }
         }
     </style>
-    {% block head %}{% endblock %}
-</head>
+    </head>
 <body>
-    <a href="#main" class="skip-link">Skip to content</a>
+    <a href="2027-cecam-lorentz-workshop-selected.html#main" class="skip-link">Skip to content</a>
 
     <header class="site-header" id="site-header">
         <div class="container site-header__inner">
-            <a class="brand" href="/" aria-label="CECAM — home">
+            <a class="brand" href="../index.html" aria-label="CECAM — home">
                 <span class="brand__dot" aria-hidden="true"></span>
                 CECAM
                 <span class="brand__suffix">Centre Européen de Calcul Atomique et Moléculaire</span>
@@ -551,17 +546,82 @@
                 Menu
             </button>
             <nav class="primary-nav" id="primary-nav" aria-label="Primary">
-                <a href="/program"{% if current_path == '/program' or (current_path starts with '/program/') %} class="is-active"{% endif %}>Program</a>
-                <a href="/flagship-call"{% if current_path == '/flagship-call' %} class="is-active"{% endif %}>Flagship Call</a>
-                <a href="/activities"{% if current_path == '/activities' or (current_path starts with '/activities/') %} class="is-active"{% endif %}>Activities</a>
-                <a href="/about"{% if current_path == '/about' %} class="is-active"{% endif %}>About</a>
-                <a href="/news"{% if current_path == '/news' or (current_path starts with '/news/') %} class="is-active"{% endif %}>News</a>
+                <a href="../program.html">Program</a>
+                <a href="../flagship-call.html">Flagship Call</a>
+                <a href="../activities.html">Activities</a>
+                <a href="../about.html">About</a>
+                <a href="../news.html">News</a>
             </nav>
         </div>
     </header>
 
     <main id="main">
-        {% block content %}{% endblock %}
+        
+<section class="section section--lg post-hero">
+    <div class="container">
+        <p class="small-meta post-hero__crumbs">
+            <a href="../news.html">News</a>
+            <span class="event-row__sep">·</span>
+            <time datetime="2026-03-24">24 March 2026</time>
+            <span class="event-row__sep">·</span><span>CECAM Headquarters</span>        </p>
+        <h1 class="display post-hero__title">The 2027 CECAM-Lorentz workshop has been selected.</h1>
+        <p class="post-hero__lede">Congratulations to Maximilian Ries, Sebastian Pfaller and Andrea Giuntoli: their proposal &quot;Fracture of Amorphous Materials Across the Scales&quot; is the 2027 CECAM-Lorentz workshop.</p>    </div>
+</section>
+
+    <figure class="post-hero__image">
+        <div class="container">
+            <img src="../uploads/molecular-network.png" alt="" loading="lazy">
+        </div>
+    </figure>
+
+<section class="section section--lg">
+    <div class="container">
+        <article class="prose read-col" style="margin-inline:auto;">
+            <p>Congratulations to <strong>Maximilian Ries</strong>, <strong>Sebastian Pfaller</strong> and <strong>Andrea Giuntoli</strong>: their proposal on the <em>Fracture of Amorphous Materials Across the Scales</em> has been selected for the 2027 CECAM-Lorentz workshop slot.</p>
+<p>The workshop will take place at <strong>CECAM-HQ, EPFL Lausanne on 12 – 16 April 2027</strong>. The CECAM-Lorentz workshop is a joint format with the Lorentz Center in Leiden, awarded once per year to a proposal that demonstrates strong methodological depth and an opportunity to bring communities together that don't usually share a room.</p>
+<p>This year's selection responds to a long-standing methodological gap: fracture in disordered solids spans bond breaking at the atomic scale, plastic-zone formation at the mesoscale, and crack-front dynamics at the macroscopic scale, with each community typically using different tools. The Ries / Pfaller / Giuntoli proposal is built explicitly around bridging those scales, with a programme that mixes atomistic and coarse-grained simulators, phase-field practitioners, and experimental fracture mechanics.</p>
+<p>Five days, around thirty invited participants, hands-on discussion sessions, and the Lorentz format's signature mid-week &quot;open day.&quot; Applications for the open participant track will be announced through the workshop page in the coming weeks.</p>
+<p><a href="../program/fracture-of-amorphous-materials-across-the-scales.html">See the workshop page →</a></p>
+
+        </article>
+    </div>
+</section>
+
+<section class="section section--bone">
+    <div class="container submit-band">
+        <div>
+            <p class="eyebrow">More news</p>
+            <h2 class="submit-band__title">Workshop selections and program updates.</h2>
+        </div>
+        <a class="btn" href="../news.html" style="background:#1B3A6B;color:var(--bone);border-color:#1B3A6B;">All news →</a>
+    </div>
+</section>
+
+<style>
+    .post-hero { background: var(--navy); padding-block: clamp(4rem, 7vw, 7rem) clamp(2rem, 4vw, 3rem); border-bottom: 1px solid var(--paper-line); }
+    .post-hero__crumbs { margin-bottom: 2rem; color: var(--paper-mute); }
+    .post-hero__crumbs a { color: var(--paper-mute); border: 0; }
+    .post-hero__crumbs a:hover { color: var(--brass); }
+    .post-hero__title { max-width: 24ch; }
+    .post-hero__lede {
+        font-family: 'Fraunces', serif;
+        font-style: italic;
+        font-size: clamp(1.125rem, .7vw + 1rem, 1.5rem);
+        line-height: 1.45;
+        color: var(--paper);
+        margin-top: 2rem;
+        max-width: 36em;
+    }
+    .post-hero__image { margin: 0; }
+    .post-hero__image img {
+        width: 100%;
+        max-height: 480px;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        border-block: 1px solid var(--paper-line);
+    }
+</style>
+
     </main>
 
     <footer class="site-footer">
@@ -586,28 +646,28 @@
                 <div>
                     <h4>Activities</h4>
                     <ul>
-                        <li><a href="/activities/mixed-gen">Mixed-Gen</a></li>
-                        <li><a href="/activities/cecam-lectures">CECAM Lectures</a></li>
-                        <li><a href="/activities/marvel-classics">MARVEL Classics</a></li>
-                        <li><a href="/activities/mansigh-series">Mansigh Series</a></li>
-                        <li><a href="/activities/alder-prize">Alder Prize</a></li>
-                        <li><a href="/activities/webinars">Webinars</a></li>
+                        <li><a href="../activities/mixed-gen.html">Mixed-Gen</a></li>
+                        <li><a href="../activities/cecam-lectures.html">CECAM Lectures</a></li>
+                        <li><a href="../activities/marvel-classics.html">MARVEL Classics</a></li>
+                        <li><a href="../activities/mansigh-series.html">Mansigh Series</a></li>
+                        <li><a href="../activities/alder-prize.html">Alder Prize</a></li>
+                        <li><a href="../activities/webinars.html">Webinars</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4>The institute</h4>
                     <ul>
-                        <li><a href="/about">About CECAM</a></li>
-                        <li><a href="/careers">Careers</a></li>
-                        <li><a href="/documents">Documents</a></li>
-                        <li><a href="/disclaimer">Disclaimer</a></li>
-                        <li><a href="/privacy-policy">Privacy policy</a></li>
+                        <li><a href="../about.html">About CECAM</a></li>
+                        <li><a href="../careers.html">Careers</a></li>
+                        <li><a href="../documents.html">Documents</a></li>
+                        <li><a href="../disclaimer.html">Disclaimer</a></li>
+                        <li><a href="../privacy-policy.html">Privacy policy</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-baseline">
                 <p class="footer-baseline__name">Centre Européen de Calcul Atomique et Moléculaire</p>
-                <p class="footer-baseline__copy">© 1969–{{ "now"|date('Y') }} · CECAM, Lausanne</p>
+                <p class="footer-baseline__copy">© 1969–2026 · CECAM, Lausanne</p>
             </div>
         </div>
     </footer>

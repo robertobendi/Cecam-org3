@@ -1,21 +1,472 @@
 {% extends '@theme/layout.twig' %}
 
-{% block content %}
-<div class="wrap">
-    <h1>{{ site.name }}</h1>
-    <p class="lede">Welcome. This is your new Pebblestack site. Edit this page in the admin to make it your own — or create a Page with the slug <code>home</code> to replace this entirely.</p>
+{% block title %}CECAM — Centre Européen de Calcul Atomique et Moléculaire{% endblock %}
 
-    {% if recent_posts|length > 0 %}
-        <h2>Latest writing</h2>
-        {% for post in recent_posts %}
-            <a class="post-card" href="/blog/{{ post.slug }}">
-                <h2>{{ post.field('title', '(untitled)') }}</h2>
-                <div class="date">{{ (post.publishAt ?? post.createdAt)|date('F j, Y') }}</div>
-                {% if post.field('excerpt') %}
-                    <p>{{ post.field('excerpt') }}</p>
-                {% endif %}
-            </a>
-        {% endfor %}
-    {% endif %}
-</div>
+{% set featured_events = [
+    {
+        'type': 'workshop',
+        'title': 'Fracture of Amorphous Materials Across the Scales',
+        'dates': '12 – 16 April 2027',
+        'location': 'CECAM-HQ · EPFL Lausanne',
+        'organizers': 'M. Ries · S. Pfaller · A. Giuntoli',
+        'summary': 'A CECAM-Lorentz joint workshop on multiscale modelling of fracture in glassy and polymeric matter.',
+        'slug': 'fracture-of-amorphous-materials-across-the-scales'
+    },
+    {
+        'type': 'workshop',
+        'title': 'Deep Learning in Materials Science: Interpretation, Generalization, Overfitting',
+        'dates': '24 – 26 March 2027',
+        'location': 'CECAM-HQ · EPFL Lausanne',
+        'organizers': 'F. Musil · N. Lopanitsyna · M. Ceriotti',
+        'summary': 'A working meeting on what ML models actually learn — and what they don\'t — for atomistic systems.',
+        'slug': 'deep-learning-in-materials-science'
+    },
+    {
+        'type': 'conference',
+        'title': 'Spin–Orbit Coupling in Electronic Structure',
+        'dates': '8 – 11 June 2027',
+        'location': 'CECAM-DE-MM1 · Mainz',
+        'organizers': 'Psi-k / CECAM joint conference',
+        'summary': 'Recent theoretical and computational developments at the interface of spin-orbit interaction and electronic structure.',
+        'slug': 'spin-orbit-coupling-in-electronic-structure'
+    },
+    {
+        'type': 'school',
+        'title': 'Hands-on Fleur: All-Electron DFT for Solids',
+        'dates': '14 – 18 September 2026',
+        'location': 'Forschungszentrum Jülich · Germany',
+        'organizers': 'G. Bihlmayer · D. Wortmann · S. Blügel',
+        'summary': 'A practical week with the FLEUR code — full-potential LAPW for magnetism, spin-orbit, and force calculations.',
+        'slug': 'hands-on-fleur-all-electron-dft-for-solids'
+    }
+] %}
+
+{% set activity_tiles = [
+    { 'mono': 'MG', 'title': 'Mixed-Gen', 'slug': 'mixed-gen', 'lede': 'Online talks and poster sessions on advanced simulation topics, for simulators young in years or at heart.' },
+    { 'mono': 'WB', 'title': 'Webinars', 'slug': 'webinars', 'lede': 'A rolling program of online seminars from across the European simulation community.' },
+    { 'mono': 'CL', 'title': 'CECAM Lectures', 'slug': 'cecam-lectures', 'lede': 'Since April 2015, lectures highlighting interesting developments across computational science.' },
+    { 'mono': 'MC', 'title': 'MARVEL Classics', 'slug': 'marvel-classics', 'lede': 'Milestone methods and algorithms presented by their originators — a different look at the canon.' },
+    { 'mono': 'MS', 'title': 'Mansigh Conversations', 'slug': 'mansigh-series', 'lede': 'Non-technical topics of cultural interest to the simulation community, in informal conversation.' },
+    { 'mono': 'AP', 'title': 'Berni J. Alder Prize', 'slug': 'alder-prize', 'lede': 'CECAM\'s recognition of exceptional contributions to microscopic simulation of matter.' }
+] %}
+
+{% block content %}
+
+{# — Hero — #}
+<section class="hero">
+    <div class="container hero__grid">
+        <div class="hero__copy">
+            <p class="eyebrow">Lausanne · since 1969</p>
+            <h1 class="display hero__headline">
+                Computational science,<br>
+                <em>convened in Lausanne</em><br>
+                since 1969.
+            </h1>
+            <p class="hero__lede">
+                CECAM runs the European program of flagship workshops, schools, and conferences in
+                atomistic and molecular simulation — materials, biology, medicinal chemistry, and the
+                physics and chemistry of condensed matter.
+            </p>
+            <div class="hero__cta">
+                <a class="btn btn--primary" href="/flagship-call">Submit a proposal</a>
+                <a class="btn btn--secondary" href="/program">See the 2027 program</a>
+            </div>
+            <dl class="hero__facts">
+                <div><dt>Founded</dt><dd>1969</dd></div>
+                <div><dt>Headquarters</dt><dd>EPFL, Lausanne</dd></div>
+                <div><dt>Member nodes</dt><dd>22 across Europe</dd></div>
+                <div><dt>2026 program</dt><dd>80+ events</dd></div>
+            </dl>
+        </div>
+        <figure class="hero__image">
+            <img src="/uploads/cecam-auditorium.png" alt="CECAM conference auditorium at EPFL Lausanne, attendees facing a panel under the CECAM banner.">
+            <figcaption class="hero__caption">CECAM-HQ · EPFL Auditorium</figcaption>
+        </figure>
+    </div>
+</section>
+
+{# — Open Flagship Call band — #}
+<section class="callband">
+    <div class="container callband__inner">
+        <div class="callband__meta">
+            <p class="eyebrow callband__eyebrow">Open call · 2027 – 2028 program</p>
+            <p class="callband__line">Submissions are open. Help shape the next two-year program of CECAM flagship workshops and schools.</p>
+        </div>
+        <div class="callband__deadline" aria-label="Deadline 17 July 2026">
+            <span class="callband__day">17</span>
+            <span class="callband__month">Jul</span>
+            <span class="callband__year">2026</span>
+        </div>
+        <div class="callband__cta">
+            <a class="btn btn--primary" href="/flagship-call">Read the call</a>
+        </div>
+    </div>
+</section>
+
+{# — Upcoming events — #}
+<section class="section section--lg">
+    <div class="container">
+        <header class="block-head">
+            <div>
+                <p class="eyebrow">2026 – 2027 program</p>
+                <h2>Upcoming workshops, schools and conferences</h2>
+            </div>
+            <a class="btn--ghost" href="/program">See the full program →</a>
+        </header>
+
+        <div class="events-grid">
+            {% for ev in featured_events %}
+                <a class="card event-card" href="/program/{{ ev.slug }}">
+                    <div class="card__head">
+                        <span class="eyebrow event-card__type">{{ ev.type }}</span>
+                        <span class="meta-mono">{{ ev.dates }}</span>
+                    </div>
+                    <h3>{{ ev.title }}</h3>
+                    <p>{{ ev.summary }}</p>
+                    <div class="card__footer">
+                        <span class="small-meta">{{ ev.location }}</span><br>
+                        <span class="small-meta">{{ ev.organizers }}</span>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{# — Featured news — #}
+<section class="section section--navy-2">
+    <div class="container split-block">
+        <div class="split-block__left">
+            <p class="eyebrow">From the program</p>
+            <h2>The 2027 CECAM-Lorentz workshop has been selected.</h2>
+            <p class="dim small-meta">News · 24 March 2026</p>
+        </div>
+        <div class="split-block__right">
+            <figure class="news-thumb">
+                <img src="/uploads/molecular-network.png" alt="Three-dimensional carbon network with embedded molecules — visualization relevant to fracture in amorphous matter.">
+            </figure>
+            <p>
+                Congratulations to <strong>Maximilian Ries</strong>, <strong>Sebastian Pfaller</strong> and
+                <strong>Andrea Giuntoli</strong>: their proposed workshop on <em>Fracture of Amorphous
+                Materials Across the Scales</em> has been selected for the 2027 CECAM-Lorentz slot. The
+                workshop takes place at CECAM-HQ, EPFL, Lausanne on 12 – 16 April 2027.
+            </p>
+            <p><a href="/news/2027-cecam-lorentz-workshop-selected">Read the announcement →</a></p>
+        </div>
+    </div>
+</section>
+
+{# — Activities strip — #}
+<section class="section">
+    <div class="container">
+        <header class="block-head">
+            <div>
+                <p class="eyebrow">Other activities</p>
+                <h2>Lectures, conversations, prizes</h2>
+            </div>
+            <a class="btn--ghost" href="/activities">All activity series →</a>
+        </header>
+        <div class="activities-grid">
+            {% for a in activity_tiles %}
+                <a class="card activity-card" href="/activities/{{ a.slug }}">
+                    <div class="activity-card__mono" aria-hidden="true">{{ a.mono }}</div>
+                    <h3>{{ a.title }}</h3>
+                    <p>{{ a.lede }}</p>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{# — About teaser — #}
+<section class="section section--bone">
+    <div class="container split-block split-block--bone">
+        <div class="split-block__left">
+            <p class="eyebrow">About</p>
+            <h2>An institution, not a conference vendor.</h2>
+        </div>
+        <div class="split-block__right">
+            <p>
+                CECAM — the <em>Centre Européen de Calcul Atomique et Moléculaire</em> — is an
+                organisation devoted to the promotion of fundamental research on advanced
+                computational methods, and to their application to important problems at the
+                frontier of science and technology.
+            </p>
+            <p>
+                Founded in 1969, the centre's traditional focus has been atomistic and molecular
+                simulation, applied to the physics and chemistry of condensed matter. Over the last
+                twenty years its methods have extended into materials science, biology and
+                medicinal chemistry.
+            </p>
+            <p><a href="/about">Read more about CECAM →</a></p>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* — Hero — */
+    .hero {
+        background:
+            radial-gradient(ellipse 80% 60% at 88% 30%, rgba(27,58,107,.45) 0, rgba(10,22,40,0) 65%),
+            linear-gradient(to bottom, var(--navy) 0%, var(--navy-2) 100%);
+        padding-block: clamp(3.5rem, 8vw, 7rem);
+        position: relative;
+        overflow: hidden;
+    }
+    .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+            linear-gradient(to right, rgba(232,228,217,.04) 1px, transparent 1px);
+        background-size: calc((min(100vw, 1240px) - 4rem) / 12) 100%;
+        background-position: 50% 0;
+        pointer-events: none;
+        opacity: .5;
+    }
+    .hero__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: clamp(2rem, 4vw, 4rem);
+        align-items: center;
+        position: relative;
+        z-index: 1;
+    }
+    @media (min-width: 960px) {
+        .hero__grid { grid-template-columns: 6fr 5fr; gap: clamp(2rem, 5vw, 5rem); }
+    }
+    .hero__headline {
+        margin-top: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+    .hero__headline em {
+        font-style: italic;
+        color: var(--brass);
+        font-weight: 500;
+    }
+    .hero__lede {
+        font-size: clamp(1rem, .6vw + .9rem, 1.1875rem);
+        line-height: 1.55;
+        color: var(--paper);
+        max-width: 36em;
+        margin-bottom: 2rem;
+    }
+    .hero__cta {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        margin-bottom: 2.5rem;
+    }
+    .hero__facts {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.25rem 2rem;
+        margin: 0;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--paper-line);
+        max-width: 32rem;
+    }
+    @media (min-width: 520px) { .hero__facts { grid-template-columns: repeat(4, 1fr); } }
+    .hero__facts > div { display: flex; flex-direction: column; gap: 0.25rem; }
+    .hero__facts dt {
+        font-size: 0.6875rem;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--paper-mute);
+    }
+    .hero__facts dd {
+        margin: 0;
+        font-family: 'Fraunces', serif;
+        font-weight: 500;
+        font-size: 1.0625rem;
+        color: var(--bone);
+        line-height: 1.2;
+    }
+    .hero__image {
+        position: relative;
+        margin: 0;
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        border: 1px solid var(--paper-line);
+    }
+    .hero__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .hero__image::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(27,58,107,.45) 0%, rgba(27,58,107,0) 55%);
+        pointer-events: none;
+    }
+    .hero__caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0.75rem 1rem;
+        background: linear-gradient(to top, rgba(10,22,40,.85) 0%, rgba(10,22,40,0) 100%);
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--bone);
+    }
+
+    /* — Call band — */
+    .callband {
+        background: var(--bone);
+        color: var(--navy);
+        border-top: 1px solid var(--bone-2);
+        border-bottom: 1px solid var(--bone-2);
+        position: relative;
+    }
+    .callband::before, .callband::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: rgba(10,22,40,.08);
+    }
+    .callband__inner {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding-block: clamp(2rem, 4vw, 3.25rem);
+        align-items: center;
+    }
+    @media (min-width: 720px) {
+        .callband__inner { grid-template-columns: 1fr auto auto; gap: 2rem 2.5rem; }
+    }
+    .callband__eyebrow { color: #8A6618; }
+    .callband__line {
+        font-family: 'Fraunces', serif;
+        font-size: clamp(1.25rem, 1vw + 1rem, 1.75rem);
+        line-height: 1.25;
+        color: var(--navy);
+        margin: 0.25rem 0 0;
+        font-weight: 500;
+        max-width: 32em;
+    }
+    .callband__deadline {
+        display: inline-grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        gap: 0 0.75rem;
+        align-items: baseline;
+        padding-left: 1.5rem;
+        border-left: 1px solid rgba(10,22,40,.18);
+        color: var(--navy);
+    }
+    .callband__day {
+        grid-row: 1 / span 2;
+        font-family: 'Fraunces', serif;
+        font-weight: 600;
+        font-size: clamp(3.5rem, 5vw + 1rem, 5rem);
+        line-height: 0.85;
+        color: var(--navy);
+        font-variation-settings: "opsz" 144;
+    }
+    .callband__month {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.8125rem;
+        font-weight: 500;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #8A6618;
+    }
+    .callband__year {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.8125rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        color: #5B554D;
+    }
+
+    /* — Block head — */
+    .block-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 1.5rem;
+        padding-bottom: 2.5rem;
+        border-bottom: 1px solid var(--paper-line);
+        margin-bottom: 2.5rem;
+        flex-wrap: wrap;
+    }
+    .block-head h2 { margin-top: 0.5rem; max-width: 22ch; }
+
+    .events-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1px;
+        background: var(--paper-line);
+        border: 1px solid var(--paper-line);
+    }
+    .events-grid .card {
+        border: 0;
+        background: var(--navy);
+        padding: 1.75rem;
+    }
+    .events-grid .card:hover { background: var(--navy-3); border: 0; }
+    .event-card__type { color: var(--brass); }
+    .event-card .meta-mono { color: var(--paper); }
+
+    /* — Split block — */
+    .split-block {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    @media (min-width: 880px) {
+        .split-block { grid-template-columns: 5fr 7fr; gap: clamp(2rem, 4vw, 4rem); }
+    }
+    .split-block__left h2 { max-width: 14ch; }
+    .split-block__right { max-width: 38rem; }
+    .split-block--bone .split-block__right p { font-size: 1.0625rem; line-height: 1.7; color: #1A1816; }
+    .news-thumb {
+        margin: 0 0 1.5rem;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        border: 1px solid var(--paper-line);
+    }
+    .news-thumb img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.85) contrast(1.05); }
+
+    /* — Activities grid — */
+    .activities-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1px;
+        background: var(--paper-line);
+        border: 1px solid var(--paper-line);
+    }
+    @media (min-width: 600px) { .activities-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 960px) { .activities-grid { grid-template-columns: repeat(3, 1fr); } }
+    .activities-grid .card {
+        border: 0;
+        background: var(--navy);
+        padding: 1.75rem;
+        min-height: 220px;
+    }
+    .activities-grid .card:hover { background: var(--navy-3); border: 0; }
+    .activity-card__mono {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border: 1px solid var(--brass);
+        color: var(--brass);
+        font-family: 'Fraunces', serif;
+        font-weight: 600;
+        font-size: 0.9375rem;
+        letter-spacing: 0.04em;
+    }
+    .activity-card h3 { font-size: 1.25rem; }
+</style>
+
 {% endblock %}

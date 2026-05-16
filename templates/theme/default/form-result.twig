@@ -1,17 +1,22 @@
 {% extends '@theme/layout.twig' %}
 
-{% block title %}{{ ok ? 'Thanks' : 'Try again' }} · {{ site.name }}{% endblock %}
+{% block title %}{{ ok ? 'Thanks' : 'Try again' }} · CECAM{% endblock %}
 
 {% block content %}
-<div class="wrap" style="text-align:center;padding:4rem 0;">
-    {% if ok %}
-        <h1>Thanks for getting in touch.</h1>
-        <p class="lede">We received your message.</p>
-    {% else %}
-        <h1>Something went wrong.</h1>
-        <ul style="display:inline-block;text-align:left;">
-            {% for e in errors %}<li>{{ e }}</li>{% endfor %}</ul>
-        <p style="margin-top:2rem;"><a href="javascript:history.back()">← Go back</a></p>
-    {% endif %}
-</div>
+<section class="section section--lg">
+    <div class="container" style="max-width:42rem;">
+        {% if ok %}
+            <p class="eyebrow">Received</p>
+            <h1 class="display">Thanks for getting in touch.</h1>
+            <p class="page-hero__lede">The CECAM helpdesk will reply within a few working days.</p>
+        {% else %}
+            <p class="eyebrow">Try again</p>
+            <h1 class="display">Something went wrong.</h1>
+            <ul class="prose">
+                {% for e in errors %}<li>{{ e }}</li>{% endfor %}
+            </ul>
+            <p style="margin-top:2rem;"><a class="btn btn--secondary" href="javascript:history.back()">← Go back</a></p>
+        {% endif %}
+    </div>
+</section>
 {% endblock %}

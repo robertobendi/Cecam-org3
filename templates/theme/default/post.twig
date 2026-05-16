@@ -1,22 +1,78 @@
 {% extends '@theme/layout.twig' %}
-{% set meta_description = entry.field('excerpt') %}
 
-{% block title %}{{ entry.field('title') }} · {{ site.name }}{% endblock %}
+{% set title = entry.field('title') %}
+{% set excerpt = entry.field('excerpt') %}
+{% set thumbnail = entry.field('thumbnail') %}
+{% set author = entry.field('author') %}
+{% set pubAt = entry.publishAt ?? entry.createdAt %}
+
+{% block title %}{{ title }} · CECAM News{% endblock %}
+{% set meta_description = excerpt %}
 
 {% block content %}
-<article class="wrap">
-    <h1>{{ entry.field('title') }}</h1>
-    <p class="meta">
-        {{ (entry.publishAt ?? entry.createdAt)|date('F j, Y') }}
-        {% if entry.field('author') %} · by {{ entry.field('author') }}{% endif %}
-    </p>
-    {% if entry.field('excerpt') %}
-        <p class="lede">{{ entry.field('excerpt') }}</p>
-    {% endif %}
-    <div class="article-body">
-        {{ entry.field('body')|markdown }}
+
+<section class="section section--lg post-hero">
+    <div class="container">
+        <p class="small-meta post-hero__crumbs">
+            <a href="/news">News</a>
+            <span class="event-row__sep">·</span>
+            <time datetime="{{ pubAt|date('Y-m-d') }}">{{ pubAt|date('j F Y') }}</time>
+            {% if author %}<span class="event-row__sep">·</span><span>{{ author }}</span>{% endif %}
+        </p>
+        <h1 class="display post-hero__title">{{ title }}</h1>
+        {% if excerpt %}<p class="post-hero__lede">{{ excerpt }}</p>{% endif %}
     </div>
-    <hr>
-    <p><a href="/blog">← All posts</a></p>
-</article>
+</section>
+
+{% if thumbnail %}
+    <figure class="post-hero__image">
+        <div class="container">
+            <img src="{{ thumbnail }}" alt="" loading="lazy">
+        </div>
+    </figure>
+{% endif %}
+
+<section class="section section--lg">
+    <div class="container">
+        <article class="prose read-col" style="margin-inline:auto;">
+            {{ entry.field('body')|markdown }}
+        </article>
+    </div>
+</section>
+
+<section class="section section--bone">
+    <div class="container submit-band">
+        <div>
+            <p class="eyebrow">More news</p>
+            <h2 class="submit-band__title">Workshop selections and program updates.</h2>
+        </div>
+        <a class="btn" href="/news" style="background:#1B3A6B;color:var(--bone);border-color:#1B3A6B;">All news →</a>
+    </div>
+</section>
+
+<style>
+    .post-hero { background: var(--navy); padding-block: clamp(4rem, 7vw, 7rem) clamp(2rem, 4vw, 3rem); border-bottom: 1px solid var(--paper-line); }
+    .post-hero__crumbs { margin-bottom: 2rem; color: var(--paper-mute); }
+    .post-hero__crumbs a { color: var(--paper-mute); border: 0; }
+    .post-hero__crumbs a:hover { color: var(--brass); }
+    .post-hero__title { max-width: 24ch; }
+    .post-hero__lede {
+        font-family: 'Fraunces', serif;
+        font-style: italic;
+        font-size: clamp(1.125rem, .7vw + 1rem, 1.5rem);
+        line-height: 1.45;
+        color: var(--paper);
+        margin-top: 2rem;
+        max-width: 36em;
+    }
+    .post-hero__image { margin: 0; }
+    .post-hero__image img {
+        width: 100%;
+        max-height: 480px;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        border-block: 1px solid var(--paper-line);
+    }
+</style>
+
 {% endblock %}

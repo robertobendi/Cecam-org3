@@ -3,13 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}{{ site.name }} — Centre Européen de Calcul Atomique et Moléculaire{% endblock %}</title>
-    {% if meta_description is defined %}
-        <meta name="description" content="{{ meta_description }}">
-    {% else %}
-        <meta name="description" content="CECAM runs the European program of flagship workshops, schools, and conferences in atomistic and molecular simulation.">
-    {% endif %}
-    <meta name="theme-color" content="#0A1628">
+    <title>Disclaimer · CECAM</title>
+            <meta name="description" content="Terms of use for the CECAM website, accuracy notice, and reproduction policy.">
+        <meta name="theme-color" content="#0A1628">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -534,14 +530,13 @@
             .site-header, .site-footer, .nav-toggle { display: none; }
         }
     </style>
-    {% block head %}{% endblock %}
-</head>
+    </head>
 <body>
-    <a href="#main" class="skip-link">Skip to content</a>
+    <a href="disclaimer.html#main" class="skip-link">Skip to content</a>
 
     <header class="site-header" id="site-header">
         <div class="container site-header__inner">
-            <a class="brand" href="/" aria-label="CECAM — home">
+            <a class="brand" href="index.html" aria-label="CECAM — home">
                 <span class="brand__dot" aria-hidden="true"></span>
                 CECAM
                 <span class="brand__suffix">Centre Européen de Calcul Atomique et Moléculaire</span>
@@ -551,17 +546,225 @@
                 Menu
             </button>
             <nav class="primary-nav" id="primary-nav" aria-label="Primary">
-                <a href="/program"{% if current_path == '/program' or (current_path starts with '/program/') %} class="is-active"{% endif %}>Program</a>
-                <a href="/flagship-call"{% if current_path == '/flagship-call' %} class="is-active"{% endif %}>Flagship Call</a>
-                <a href="/activities"{% if current_path == '/activities' or (current_path starts with '/activities/') %} class="is-active"{% endif %}>Activities</a>
-                <a href="/about"{% if current_path == '/about' %} class="is-active"{% endif %}>About</a>
-                <a href="/news"{% if current_path == '/news' or (current_path starts with '/news/') %} class="is-active"{% endif %}>News</a>
+                <a href="program.html">Program</a>
+                <a href="flagship-call.html">Flagship Call</a>
+                <a href="activities.html">Activities</a>
+                <a href="about.html">About</a>
+                <a href="news.html">News</a>
             </nav>
         </div>
     </header>
 
     <main id="main">
-        {% block content %}{% endblock %}
+        
+        <section class="section section--lg page-hero">
+        <div class="container">
+            <p class="eyebrow">Legal</p>            <h1 class="display page-hero__title">Disclaimer</h1>
+            <p class="page-hero__lede">Terms of use for the CECAM website and reproduction of CECAM materials.</p>        </div>
+    </section>
+
+            <figure class="page-hero__image">
+            <div class="container">
+                <img src="uploads/lausanne-epfl.jpg" alt="Disclaimer">
+            </div>
+        </figure>
+    
+    <section class="section">
+        <div class="container">
+            <div class="prose read-col" style="margin-inline:auto;">
+                <h2>Website content</h2>
+<p>The information on this website is provided by CECAM (Centre Européen de Calcul Atomique et Moléculaire), hosted by EPFL, in good faith. Programme details, dates, and participant lists are kept up to date but may change between announcement and the event itself. Always check the official event page on <strong>cecam.org</strong> before travelling.</p>
+<h2>Accuracy</h2>
+<p>CECAM makes reasonable efforts to ensure that the content of this website is accurate and current, but does not warrant the completeness or accuracy of any information. Scientific opinions expressed by workshop organisers and lecturers are those of the individuals concerned, not necessarily of CECAM.</p>
+<h2>External links</h2>
+<p>Links from this site to third-party sites (sister networks, host institutions, submission portals) are provided for convenience. CECAM has no control over the content of those sites and accepts no responsibility for them.</p>
+<h2>Reproduction</h2>
+<p>Text and images on this website may be reproduced for non-commercial academic and journalistic purposes provided the source — <em>CECAM, Lausanne</em> — is credited. For other uses, contact <strong>helpdesk@cecam.org</strong>.</p>
+<h2>Hosting</h2>
+<p>CECAM is hosted at the École Polytechnique Fédérale de Lausanne (EPFL), Switzerland, and its activities are governed by EPFL's institutional policies in addition to CECAM's own statutes.</p>
+            </div>
+        </div>
+    </section>
+
+<style>
+    /* — Flagship hero — */
+    .flagship-hero {
+        position: relative;
+        padding-block: clamp(4rem, 8vw, 8rem);
+        background:
+            linear-gradient(to bottom, rgba(10,22,40,.78) 0%, rgba(10,22,40,.92) 100%),
+            var(--hero-bg, none) center / cover no-repeat,
+            var(--navy);
+        overflow: hidden;
+        border-bottom: 1px solid var(--paper-line);
+    }
+    .flagship-hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(27,58,107,.5) 0%, rgba(10,22,40,0) 65%);
+        pointer-events: none;
+    }
+    .flagship-hero__inner {
+        position: relative;
+        z-index: 1;
+        max-width: 980px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .flagship-hero__eyebrow { color: var(--brass); margin-bottom: 1.5rem; }
+    .flagship-hero__title {
+        margin: 0 auto;
+        max-width: 18ch;
+        font-size: clamp(2.5rem, 5vw + 1rem, 5rem);
+        color: var(--bone);
+    }
+    .flagship-hero__lede {
+        max-width: 38em;
+        margin: 1.5rem auto 2.5rem;
+        font-size: clamp(1.0625rem, .6vw + 1rem, 1.25rem);
+        line-height: 1.55;
+        color: var(--paper);
+    }
+    .flagship-hero__deadline {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1.5rem 2rem;
+        margin: 0 auto 2.5rem;
+        border: 1px solid var(--brass);
+        background: rgba(10,22,40,.5);
+    }
+    .flagship-hero__deadline .eyebrow { color: var(--brass); }
+    .flagship-hero__date {
+        margin: 0;
+        display: flex;
+        gap: 1rem;
+        align-items: baseline;
+    }
+    .flagship-hero__day {
+        font-family: 'Fraunces', serif;
+        font-weight: 600;
+        font-size: clamp(4rem, 8vw, 7rem);
+        line-height: 0.85;
+        color: var(--brass);
+        font-variation-settings: "opsz" 144;
+        letter-spacing: -0.02em;
+    }
+    .flagship-hero__month-year {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.35rem;
+    }
+    .flagship-hero__month-year > span:first-child {
+        font-family: 'Fraunces', serif;
+        font-weight: 500;
+        font-size: 1.5rem;
+        color: var(--bone);
+        line-height: 1;
+    }
+    .flagship-hero__cta {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* — Submit band — */
+    .submit-band {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        flex-wrap: wrap;
+        padding-block: clamp(2rem, 4vw, 3.5rem);
+    }
+    .submit-band__title { max-width: 18ch; margin-top: .5rem; }
+    .submit-band__actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+    /* — About — */
+    .about-title { padding-block: clamp(4rem, 8vw, 8rem) clamp(3rem, 5vw, 5rem); border-bottom: 1px solid var(--paper-line); background: var(--navy); }
+    .about-title__name {
+        font-size: clamp(2.5rem, 6vw, 5rem);
+        line-height: 1.05;
+        max-width: 18ch;
+        margin-top: 1.5rem;
+    }
+    .about-title__name em { color: var(--brass); font-weight: 500; }
+    .about-title__lede {
+        font-family: 'Fraunces', serif;
+        font-style: italic;
+        font-size: clamp(1.25rem, 1vw + 1rem, 1.625rem);
+        line-height: 1.4;
+        color: var(--paper);
+        max-width: 32em;
+        margin-top: 2.5rem;
+    }
+    .about-mission { font-size: 1.125rem; line-height: 1.7; color: #1A1816; }
+    .about-mission p { color: #1A1816; }
+    .about-mission p:first-child::first-letter {
+        font-family: 'Fraunces', serif;
+        font-weight: 600;
+        font-size: 4.5rem;
+        line-height: 0.85;
+        float: left;
+        padding: 0.35rem 0.75rem 0 0;
+        color: #1B3A6B;
+    }
+    .about-photo {
+        margin: 0;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid var(--paper-line);
+        aspect-ratio: 4 / 3;
+    }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .about-address { font-style: normal; line-height: 1.7; color: var(--paper); margin: 1rem 0; }
+
+    .nodes-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 0;
+        border: 1px solid var(--paper-line);
+    }
+    .nodes-list li {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.8125rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--paper);
+        padding: 1rem 1.25rem;
+        border-right: 1px solid var(--paper-line);
+        border-bottom: 1px solid var(--paper-line);
+    }
+    .nodes-list li:nth-child(4n) { border-right: 0; }
+
+    /* — Generic page — */
+    .page-hero { padding-block: clamp(4rem, 8vw, 7rem) clamp(2rem, 4vw, 3rem); border-bottom: 1px solid var(--paper-line); background: var(--navy); }
+    .page-hero__title { max-width: 16ch; margin-top: 1rem; }
+    .page-hero__lede {
+        font-family: 'Fraunces', serif;
+        font-style: italic;
+        font-size: clamp(1.125rem, .7vw + 1rem, 1.5rem);
+        line-height: 1.45;
+        color: var(--paper);
+        margin-top: 2rem;
+        max-width: 36em;
+    }
+    .page-hero__image { margin: 0; }
+    .page-hero__image img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        border-block: 1px solid var(--paper-line);
+    }
+</style>
+
     </main>
 
     <footer class="site-footer">
@@ -586,28 +789,28 @@
                 <div>
                     <h4>Activities</h4>
                     <ul>
-                        <li><a href="/activities/mixed-gen">Mixed-Gen</a></li>
-                        <li><a href="/activities/cecam-lectures">CECAM Lectures</a></li>
-                        <li><a href="/activities/marvel-classics">MARVEL Classics</a></li>
-                        <li><a href="/activities/mansigh-series">Mansigh Series</a></li>
-                        <li><a href="/activities/alder-prize">Alder Prize</a></li>
-                        <li><a href="/activities/webinars">Webinars</a></li>
+                        <li><a href="activities/mixed-gen.html">Mixed-Gen</a></li>
+                        <li><a href="activities/cecam-lectures.html">CECAM Lectures</a></li>
+                        <li><a href="activities/marvel-classics.html">MARVEL Classics</a></li>
+                        <li><a href="activities/mansigh-series.html">Mansigh Series</a></li>
+                        <li><a href="activities/alder-prize.html">Alder Prize</a></li>
+                        <li><a href="activities/webinars.html">Webinars</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4>The institute</h4>
                     <ul>
-                        <li><a href="/about">About CECAM</a></li>
-                        <li><a href="/careers">Careers</a></li>
-                        <li><a href="/documents">Documents</a></li>
-                        <li><a href="/disclaimer">Disclaimer</a></li>
-                        <li><a href="/privacy-policy">Privacy policy</a></li>
+                        <li><a href="about.html">About CECAM</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="documents.html">Documents</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                        <li><a href="privacy-policy.html">Privacy policy</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-baseline">
                 <p class="footer-baseline__name">Centre Européen de Calcul Atomique et Moléculaire</p>
-                <p class="footer-baseline__copy">© 1969–{{ "now"|date('Y') }} · CECAM, Lausanne</p>
+                <p class="footer-baseline__copy">© 1969–2026 · CECAM, Lausanne</p>
             </div>
         </div>
     </footer>

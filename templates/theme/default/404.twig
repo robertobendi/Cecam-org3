@@ -1,11 +1,17 @@
 {% extends '@theme/layout.twig' %}
 
-{% block title %}Not found · {{ site.name }}{% endblock %}
+{% block title %}Not found · CECAM{% endblock %}
 
 {% block content %}
-<div class="wrap empty-state">
-    <h1>404</h1>
-    <p class="lede">That page doesn’t exist — or has been moved.</p>
-    <p><a href="/">Go home →</a></p>
-</div>
+<section class="section section--lg">
+    <div class="container">
+        <p class="eyebrow">404</p>
+        <h1 class="display">Page not found.</h1>
+        <p class="page-hero__lede">
+            That route doesn't resolve. Try the <a href="/program">program</a>, the
+            <a href="/flagship-call">Flagship Call</a>, or jump to the
+            <a href="/">home page</a>.
+        </p>
+    </div>
+</section>
 {% endblock %}

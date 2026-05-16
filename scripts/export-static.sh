@@ -49,6 +49,12 @@ curl -sS -o /dev/null -w "install: HTTP %{http_code}\n" \
   --data-urlencode "name=${ADMIN_NAME}" \
   --data-urlencode "site_name=${SITE_NAME}" || true
 
+# Seed the site's real content (events, activities, news, pages) into the DB.
+# Idempotent: re-running upserts by (collection, slug).
+if [ -f "${ROOT}/scripts/seed.php" ]; then
+  php "${ROOT}/scripts/seed.php" || { echo "seed.php failed"; exit 1; }
+fi
+
 rm -rf "${DOCS}"
 mkdir -p "${DOCS}"
 

@@ -1,24 +1,113 @@
 {% extends '@theme/layout.twig' %}
 
-{% block title %}Blog · {{ site.name }}{% endblock %}
+{% block title %}News · CECAM{% endblock %}
+{% set meta_description = 'CECAM news — workshop selections, program announcements, and updates from the European simulation community.' %}
 
 {% block content %}
-<div class="wrap">
-    <h1>Blog</h1>
-    {% if posts|length == 0 %}
-        <div class="empty-state">
-            <p>No posts yet — check back soon.</p>
-        </div>
-    {% else %}
-        {% for post in posts %}
-            <a class="post-card" href="/blog/{{ post.slug }}">
-                <h2>{{ post.field('title', '(untitled)') }}</h2>
-                <div class="date">{{ (post.publishAt ?? post.createdAt)|date('F j, Y') }}</div>
-                {% if post.field('excerpt') %}
-                    <p>{{ post.field('excerpt') }}</p>
-                {% endif %}
-            </a>
-        {% endfor %}
-    {% endif %}
-</div>
+
+<section class="section section--lg news-title">
+    <div class="container">
+        <p class="eyebrow">Announcements</p>
+        <h1 class="display">News.</h1>
+        <p class="news-title__lede">
+            Workshop selections, program announcements, and updates from across the CECAM network.
+        </p>
+    </div>
+</section>
+
+<section class="section section--lg">
+    <div class="container">
+        {% if posts|length == 0 %}
+            <p class="dim">No news yet — check back soon.</p>
+        {% else %}
+            <ol class="news-list">
+                {% for post in posts %}
+                    <li>
+                        <a class="news-row" href="/news/{{ post.slug }}">
+                            <time class="news-row__date" datetime="{{ (post.publishAt ?? post.createdAt)|date('Y-m-d') }}">
+                                <span class="news-row__day">{{ (post.publishAt ?? post.createdAt)|date('d') }}</span>
+                                <span class="news-row__month">{{ (post.publishAt ?? post.createdAt)|date('M Y') }}</span>
+                            </time>
+                            <div class="news-row__body">
+                                <p class="eyebrow">News</p>
+                                <h2>{{ post.field('title', '(untitled)') }}</h2>
+                                {% if post.field('excerpt') %}
+                                    <p class="news-row__excerpt">{{ post.field('excerpt') }}</p>
+                                {% endif %}
+                                {% if post.field('author') %}
+                                    <p class="small-meta">By {{ post.field('author') }}</p>
+                                {% endif %}
+                            </div>
+                            {% if post.field('thumbnail') %}
+                                <figure class="news-row__thumb">
+                                    <img src="{{ post.field('thumbnail') }}" alt="" loading="lazy">
+                                </figure>
+                            {% endif %}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ol>
+        {% endif %}
+    </div>
+</section>
+
+<style>
+    .news-title { background: var(--navy); border-bottom: 1px solid var(--paper-line); padding-block: clamp(4rem, 7vw, 7rem); }
+    .news-title .display { max-width: 10ch; margin-top: 1rem; }
+    .news-title__lede {
+        max-width: 38em;
+        font-size: clamp(1rem, .6vw + .9rem, 1.1875rem);
+        line-height: 1.6;
+        color: var(--paper);
+        margin-top: 1.5rem;
+    }
+
+    .news-list { list-style: none; padding: 0; margin: 0; }
+    .news-list li { border-top: 1px solid var(--paper-line); }
+    .news-list li:last-child { border-bottom: 1px solid var(--paper-line); }
+
+    .news-row {
+        display: grid;
+        grid-template-columns: 90px 1fr;
+        gap: 1.5rem;
+        padding: 2rem 0;
+        align-items: start;
+        border: 0;
+        color: var(--paper);
+    }
+    @media (min-width: 720px) { .news-row { grid-template-columns: 110px 1fr 240px; gap: 2.5rem; } }
+    .news-row:hover { background: rgba(232,228,217,.03); border: 0; color: var(--bone); }
+    .news-row:hover h2 { color: var(--brass); }
+
+    .news-row__date { display: flex; flex-direction: column; align-items: flex-start; padding-top: 0.25rem; }
+    .news-row__day {
+        font-family: 'Fraunces', serif;
+        font-weight: 600;
+        font-size: 2.5rem;
+        color: var(--bone);
+        line-height: 0.9;
+    }
+    .news-row__month {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--brass);
+        margin-top: 0.5rem;
+    }
+
+    .news-row__body h2 { font-size: clamp(1.375rem, 1vw + 1rem, 1.875rem); margin: 0.4rem 0 0.75rem; max-width: 28ch; transition: color .15s ease; }
+    .news-row__excerpt { color: var(--paper-soft); margin: 0 0 0.75rem; max-width: 50ch; }
+
+    .news-row__thumb {
+        margin: 0;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        border: 1px solid var(--paper-line);
+    }
+    @media (max-width: 720px) { .news-row__thumb { display: none; } }
+    .news-row__thumb img { width: 100%; height: 100%; object-fit: cover; }
+</style>
+
 {% endblock %}

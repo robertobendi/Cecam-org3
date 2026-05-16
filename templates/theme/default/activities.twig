@@ -1,0 +1,181 @@
+{% extends '@theme/layout.twig' %}
+
+{% block title %}Activity Series · CECAM{% endblock %}
+{% set meta_description = 'CECAM\'s recurring lecture series, conversations and prizes — Mixed-Gen, Lectures, MARVEL Classics, Mansigh Series, and the Berni J. Alder CECAM Prize.' %}
+
+{% block content %}
+
+<section class="section section--lg activities-title">
+    <div class="container activities-title__grid">
+        <div>
+            <p class="eyebrow">Beyond the program</p>
+            <h1 class="display">Series, conversations and prizes.</h1>
+            <p class="activities-title__lede">
+                Alongside the annual program of flagship workshops, CECAM curates a small set of
+                recurring activities: online seminars and posters from across generations, conceptual
+                lectures by method authors, informal conversations on the culture of simulation,
+                and the field's longest-running prize.
+            </p>
+        </div>
+        <figure class="activities-title__figure">
+            <img src="/uploads/cecam-auditorium.png" alt="CECAM conference auditorium at EPFL Lausanne, attendees facing a panel.">
+            <figcaption class="hero__caption">CECAM Lecture · EPFL Auditorium</figcaption>
+        </figure>
+    </div>
+</section>
+
+<section class="section section--lg activities-grid-wrap">
+    <div class="container">
+        {% if entries|length == 0 %}
+            <p class="dim">No activity series defined yet.</p>
+        {% else %}
+            <div class="series-grid">
+                {% for ev in entries %}
+                    {% set ext = ev.field('external_url') %}
+                    {% set href = ext ?: '/activities/' ~ ev.slug %}
+                    {% set target = ext ? ' target="_blank" rel="noopener"' : '' %}
+                    <a class="series-card" href="{{ href }}"{{ target|raw }}>
+                        <div class="series-card__top">
+                            <div class="series-card__mono" aria-hidden="true">{{ ev.field('monogram', ev.field('title')|slice(0, 1)) }}</div>
+                            <p class="eyebrow">{{ ev.field('event_type', 'Series') }}</p>
+                        </div>
+                        <h3 class="series-card__title">{{ ev.field('title') }}</h3>
+                        <p class="series-card__summary">{{ ev.field('summary') }}</p>
+                        <p class="series-card__more">
+                            {% if ext %}Open on cecam.org →{% else %}Read more →{% endif %}
+                        </p>
+                    </a>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</section>
+
+<section class="section section--bone">
+    <div class="container split-block">
+        <div class="split-block__left">
+            <p class="eyebrow">Get involved</p>
+            <h2>Propose, attend, or nominate.</h2>
+        </div>
+        <div class="split-block__right">
+            <p>
+                Many of the series above accept community input — speaker suggestions, Mansigh
+                topic proposals, Mixed-Gen poster contributions, and Alder Prize nominations.
+                Write to the helpdesk with the series name in the subject line.
+            </p>
+            <p>
+                <a class="btn" href="mailto:helpdesk@cecam.org?subject=Activity%20series" style="background:#1B3A6B;color:var(--bone);border-color:#1B3A6B;">helpdesk@cecam.org</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .activities-title {
+        background: var(--navy);
+        border-bottom: 1px solid var(--paper-line);
+        padding-block: clamp(4rem, 7vw, 7rem);
+    }
+    .activities-title .display { max-width: 18ch; margin-top: 1rem; }
+    .activities-title__lede {
+        max-width: 42em;
+        font-size: clamp(1rem, .6vw + .9rem, 1.1875rem);
+        line-height: 1.6;
+        color: var(--paper);
+        margin-top: 2rem;
+    }
+    .activities-title__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: clamp(2rem, 4vw, 4rem);
+        align-items: end;
+    }
+    @media (min-width: 960px) {
+        .activities-title__grid { grid-template-columns: 7fr 5fr; }
+    }
+    .activities-title__figure {
+        margin: 0;
+        position: relative;
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        border: 1px solid var(--paper-line);
+    }
+    .activities-title__figure img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: grayscale(.2) contrast(1.05);
+    }
+    .activities-title__figure::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(225deg, rgba(27,58,107,.35) 0%, rgba(10,22,40,0) 60%);
+        pointer-events: none;
+    }
+
+    .activities-grid-wrap { padding-block: clamp(3rem, 6vw, 6rem); }
+    .series-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1px;
+        background: var(--paper-line);
+        border: 1px solid var(--paper-line);
+    }
+    @media (min-width: 720px) { .series-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1080px) { .series-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .series-card {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 2rem;
+        background: var(--navy);
+        color: var(--paper);
+        border: 0;
+        min-height: 280px;
+        transition: background .15s ease;
+    }
+    .series-card:hover { background: var(--navy-3); border: 0; color: var(--bone); }
+    .series-card:hover .series-card__title { color: var(--brass); }
+    .series-card:hover .series-card__more { color: var(--brass-hi); }
+    .series-card__top {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .series-card__mono {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 56px;
+        height: 56px;
+        border: 1px solid var(--brass);
+        color: var(--brass);
+        font-family: 'Fraunces', serif;
+        font-weight: 600;
+        font-size: 1.5rem;
+        font-variation-settings: "opsz" 144;
+    }
+    .series-card__title {
+        font-size: 1.5rem;
+        margin: 0;
+        max-width: 18ch;
+        line-height: 1.2;
+        transition: color .15s ease;
+    }
+    .series-card__summary { margin: 0; color: var(--paper-soft); }
+    .series-card__more {
+        margin-top: auto;
+        padding-top: 1.25rem;
+        border-top: 1px solid var(--paper-line);
+        color: var(--brass);
+        font-size: 0.8125rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+</style>
+
+{% endblock %}
